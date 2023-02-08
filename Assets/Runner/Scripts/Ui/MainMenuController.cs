@@ -10,7 +10,7 @@ namespace Runner.Scripts.Ui
     {
         private readonly ResourcePath _viewPath = new ResourcePath
         {
-            PathResource = "Prefabs/Resources/mainMenu"
+            PathResource = "MainMenuUi"
         };
 
         private readonly ProfilePlayer _profilePlayer;

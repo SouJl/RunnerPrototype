@@ -8,7 +8,7 @@ namespace Runner.Scripts.Game
     {
         private readonly ResourcePath _viewPath = new ResourcePath
         {
-            PathResource = "Prefabs/Resources/Player"
+            PathResource = "Player"
         };
 
         private readonly PlayerView _view;

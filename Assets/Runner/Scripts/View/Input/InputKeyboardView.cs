@@ -22,9 +22,9 @@ namespace Runner.Scripts.View
         {
             float moveValue = speed * _inputMultiplier * Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
                 OnRightMove(moveValue);
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))
                 OnLeftMove(moveValue);
         }
     }

@@ -11,8 +11,8 @@ namespace Runner.Scripts.View
         private Vector2 _size;
         private Vector2 _cachedPoisition;
 
-        private float LeftBorder => _cachedPoisition.x - -_size.x / 2;
-        private float RightBorder => _cachedPoisition.x + -_size.x / 2;
+        private float LeftBorder => _cachedPoisition.x - _size.x / 2;
+        private float RightBorder => _cachedPoisition.x + _size.x / 2;
 
 
         private void Awake()

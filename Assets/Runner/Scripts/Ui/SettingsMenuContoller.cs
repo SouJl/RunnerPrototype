@@ -10,7 +10,7 @@ namespace Runner.Scripts.Ui
     {
         private readonly ResourcePath _viewPath = new ResourcePath
         {
-            PathResource = "Prefabs/Resources/mainMenu"
+            PathResource = "SettingsMenuUi"
         };
 
         private ProfilePlayer _profilePlayer;
@@ -19,6 +19,7 @@ namespace Runner.Scripts.Ui
 
         public SettingsMenuContoller(Transform placeForUi, ProfilePlayer profilePlayer) 
         {
+            _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
             _view.Init(BackToMenu);
         }

@@ -16,6 +16,7 @@ namespace Runner.Scripts.Profile
 
         public ProfilePlayer(float speed)
         {
+            CurrentState = new SubscriptionProperty<GameState>();
             Player = new PlayerModel(speed);
         }
     }

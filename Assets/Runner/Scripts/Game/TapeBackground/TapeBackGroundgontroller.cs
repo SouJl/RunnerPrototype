@@ -9,7 +9,7 @@ namespace Runner.Scripts.Game
     {
         private readonly ResourcePath _viewPath = new ResourcePath
         {
-            PathResource = "Prefabs/Resources/Background"
+            PathResource = "TapeBackground"
         };
 
         private readonly SubscriptionProperty<float> _diff;
@@ -27,6 +27,7 @@ namespace Runner.Scripts.Game
             _rightMove = rightMove;
 
             _view = LoadView();
+            _view.Init(_diff);
 
             _leftMove.SubscriptionOnChange(MoveLeft);
             _rightMove.SubscriptionOnChange(MoveRight);
