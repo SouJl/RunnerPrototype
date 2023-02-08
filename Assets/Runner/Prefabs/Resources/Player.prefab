@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067279860880733089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalPosition: {x: -3, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e099f4a41d4db7942a9f1adb22da9b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 2067279860880733088}
+  _runSprites:
+  - {fileID: -2076196076, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  - {fileID: -145772165, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  - {fileID: -1075448324, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  - {fileID: 1603141906, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  - {fileID: 1759387864, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  - {fileID: -1163619391, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  - {fileID: 1371544457, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  - {fileID: 2035295216, guid: 24e59bb8bcb0b3b488cd7e85edb318ee, type: 3}
+  _animationDelay: 0.1
 --- !u!212 &2067279860880733088
 SpriteRenderer:
   m_ObjectHideFlags: 0
