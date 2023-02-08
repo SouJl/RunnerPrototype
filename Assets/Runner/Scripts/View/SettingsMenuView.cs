@@ -2,9 +2,9 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Runner.Scripts.Ui
+namespace Runner.Scripts.View
 {
-    internal class SettingsMenuView
+    internal class SettingsMenuView:MonoBehaviour
     {
         [SerializeField] private Button _backToMenuButton;
 

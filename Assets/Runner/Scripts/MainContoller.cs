@@ -56,7 +56,7 @@ namespace Runner.Scripts
                     }
                 case GameState.Game: 
                     {
-                        _gameController = new GameController();
+                        _gameController = new GameController(_profilePlayer);
                         _mainMenuController?.Dispose();
                         _settingsMenuContoller?.Dispose();
                         break;

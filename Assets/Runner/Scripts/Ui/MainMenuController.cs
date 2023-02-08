@@ -1,6 +1,7 @@
 using Runner.Scripts.Enums;
 using Runner.Scripts.Profile;
 using Runner.Scripts.Tool;
+using Runner.Scripts.View;
 using UnityEngine;
 
 namespace Runner.Scripts.Ui
@@ -26,7 +27,7 @@ namespace Runner.Scripts.Ui
         private MainMenuView LoadView(Transform placeForUi)
         {
             GameObject objectView = Object.Instantiate(ResourceLoader.LoadPrefab(_viewPath), placeForUi, false);
-            AddGameObjects(objectView);
+            AddGameObject(objectView);
             return objectView.GetComponent<MainMenuView>();
         }
 

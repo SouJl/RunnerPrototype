@@ -50,7 +50,7 @@ namespace Runner.Scripts
             _baseControllers.Add(baseController);
         }
 
-        protected void AddGameObjects(GameObject gameObject)
+        protected void AddGameObject(GameObject gameObject)
         {
             _gameObjects ??= new List<GameObject>();
             _gameObjects.Add(gameObject);
