@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 6267614946158288982}
-  _relativeSpeedRate: -1
+  _relativeSpeedRate: 0.2
 --- !u!1 &6267614946191330095
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 6267614946191330092}
-  _relativeSpeedRate: -0.6
+  _relativeSpeedRate: 1
 --- !u!1 &6267614946213600571
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 6267614946380472914}
-  _relativeSpeedRate: -0.8
+  _relativeSpeedRate: 0.5
 --- !u!1 &6267614946649656545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 6267614947531554574}
-  _relativeSpeedRate: -1
+  _relativeSpeedRate: 0.3
 --- !u!1 &6868436552621471462
 GameObject:
   m_ObjectHideFlags: 0
