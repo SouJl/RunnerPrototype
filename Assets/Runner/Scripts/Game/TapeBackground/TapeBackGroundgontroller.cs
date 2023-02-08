@@ -1,5 +1,4 @@
-﻿
-using Runner.Scripts.Interfaces;
+﻿using Runner.Scripts.Interfaces;
 using Runner.Scripts.Tool;
 using Runner.Scripts.View;
 using UnityEngine;
