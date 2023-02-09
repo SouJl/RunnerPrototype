@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 6267614946191330092}
-  _relativeSpeedRate: 1
+  _relativeSpeedRate: 0.8
 --- !u!1 &6267614946213600571
 GameObject:
   m_ObjectHideFlags: 0
