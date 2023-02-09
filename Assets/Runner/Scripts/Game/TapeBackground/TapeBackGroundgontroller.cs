@@ -7,10 +7,7 @@ namespace Runner.Scripts.Game
 {
     internal class TapeBackGroundgontroller : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath
-        {
-            PathResource = "TapeBackground"
-        };
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/TapeBackground");
 
         private readonly SubscriptionProperty<float> _diff;
         private readonly ISubscriptionProperty<float> _leftMove;

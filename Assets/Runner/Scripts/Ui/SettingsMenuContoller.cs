@@ -8,11 +8,7 @@ namespace Runner.Scripts.Ui
 {
     internal class SettingsMenuContoller : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath
-        {
-            PathResource = "SettingsMenuUi"
-        };
-
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/SettingsMenuUi");
         private ProfilePlayer _profilePlayer;
         private SettingsMenuView _view;
 

@@ -6,10 +6,7 @@ namespace Runner.Scripts.Game
 {
     internal class InputController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath
-        {
-            PathResource = "EndlessMove"
-        };
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/EndlessMove");
 
         private BaseInputView _view;
 

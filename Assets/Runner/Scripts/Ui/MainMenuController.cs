@@ -8,11 +8,7 @@ namespace Runner.Scripts.Ui
 {
     internal class MainMenuController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath
-        {
-            PathResource = "MainMenuUi"
-        };
-
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/MainMenuUi");
         private readonly ProfilePlayer _profilePlayer;
         private MainMenuView _view;
 

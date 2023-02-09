@@ -6,10 +6,7 @@ namespace Runner.Scripts.Game
 {
     internal class PlayerController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath
-        {
-            PathResource = "Player"
-        };
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Player");
 
         private readonly PlayerView _view;
 
