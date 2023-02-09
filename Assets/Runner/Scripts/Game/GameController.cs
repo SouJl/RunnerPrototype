@@ -13,7 +13,7 @@ namespace Runner.Scripts.Game
             var tapeBackground = new TapeBackGroundgontroller(leftMoveDif, rightMoveDif);
             AddController(tapeBackground);
 
-            var inputController = new InputController(leftMoveDif, rightMoveDif, profilePlayer.Player);
+            var inputController = new InputController(leftMoveDif, rightMoveDif, profilePlayer.Player, profilePlayer.InputType);
             AddController(inputController);
 
             var playerController = new PlayerController();
