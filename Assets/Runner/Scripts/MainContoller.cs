@@ -2,6 +2,8 @@
 using Runner.Scripts.Game;
 using Runner.Scripts.Profile;
 using Runner.Scripts.Ui;
+using Unity.Services.Core;
+using Unity.Services.Analytics;
 using UnityEngine;
 
 namespace Runner.Scripts
