@@ -3,7 +3,7 @@ using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
 
-namespace Runner.Scripts.Tool.Analytics
+namespace Services.Analytics
 {
     internal class AnalyticsManager:MonoBehaviour
     {

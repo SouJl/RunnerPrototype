@@ -1,7 +1,7 @@
 using Runner.Scripts.Enums;
 using Runner.Scripts.Profile;
-using Runner.Scripts.Tool.Analytics;
 using Services.Ads.UnityAds;
+using Services.Analytics;
 using Services.IAP;
 using UnityEngine;
 

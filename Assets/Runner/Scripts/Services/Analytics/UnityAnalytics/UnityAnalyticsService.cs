@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using Unity.Services.Analytics;
-using Unity.Services.Core;
 
-namespace Runner.Scripts.Tool.Analytics
+namespace Services.Analytics
 {
     internal class UnityAnalyticsService : IAnalyticsService
     {

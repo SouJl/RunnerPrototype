@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Runner.Scripts.Tool.Analytics
+namespace Services.Analytics
 {
     internal interface IAnalyticsService
     {
