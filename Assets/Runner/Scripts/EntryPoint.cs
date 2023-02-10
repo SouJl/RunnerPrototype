@@ -2,6 +2,7 @@ using Runner.Scripts.Enums;
 using Runner.Scripts.Profile;
 using Runner.Scripts.Tool.Analytics;
 using Services.Ads.UnityAds;
+using Services.IAP;
 using UnityEngine;
 
 namespace Runner.Scripts 
@@ -13,6 +14,7 @@ namespace Runner.Scripts
         [SerializeField] private Transform _placeForUi;
         [SerializeField] private AnalyticsManager _analytics;
         [SerializeField] private UnityAdsService _adsService;
+        [SerializeField] private IAPSevice _iAPSevice;
 
         private const GameState InitialState = GameState.Start;
         

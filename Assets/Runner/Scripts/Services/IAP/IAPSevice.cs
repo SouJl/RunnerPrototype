@@ -1,5 +1,4 @@
 ﻿using Services.IAP.Settings;
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Purchasing;
@@ -53,7 +52,7 @@ namespace Services.IAP
             _controller = controller;
             _extensionProvider = extensions;
             _purchaseValidator = new PurchaseValidator();
-            _purchaseRestorer = new PurchaseRestorer();
+            _purchaseRestorer = new PurchaseRestorer(_extensionProvider);
 
             Log("IAP Initialized");
         }
@@ -66,6 +65,14 @@ namespace Services.IAP
 
         PurchaseProcessingResult IStoreListener.ProcessPurchase(PurchaseEventArgs purchaseEvent)
         {
+            if (_purchaseValidator.Validate(purchaseEvent)) 
+            {
+                PurchaseSucceed?.Invoke();
+            }
+            else
+            {
+                OnPurchaseFailed(purchaseEvent.purchasedProduct.definition.id, "NonValid");
+            }
             return PurchaseProcessingResult.Complete;
         }
 
@@ -82,23 +89,38 @@ namespace Services.IAP
 
         public void Buy(string id)
         {
-            
+            if (IsInitialized) 
+            {
+                _controller.InitiatePurchase(id);
+            }
+            else 
+            {
+                Error($"Buy {id} FAIL. Not Initialized");
+            }
         }
 
         public string GetCost(string productID)
         {
-            throw new System.NotImplementedException();
+            var product = _controller.products.WithID(productID);
+            return product != null ? product.metadata.localizedPriceString : "N/A";
         }
 
         public void RestorePurchases()
         {
-            
+            if (IsInitialized) 
+            {
+                _purchaseRestorer.Restore();
+            }
+            else 
+            {
+                Error("RestorePurchases FAIL. Not Initialized");
+            }
         }
 
-        private void Log(string message) => Debug.Log(WraMessage(message));
+        private void Log(string message) => Debug.Log(WrapMessage(message));
 
-        private void Error(string message) => Debug.LogError(WraMessage(message));
+        private void Error(string message) => Debug.LogError(WrapMessage(message));
 
-        private string WraMessage(string message) => $"[{GetType().Name}] {message}";
+        private string WrapMessage(string message) => $"[{GetType().Name}] {message}";
     }
 }

@@ -70,10 +70,10 @@ namespace Services.Ads.UnityAds
         }
 
 
-        private void Log(string message) => Debug.Log(WraMessage(message));
+        private void Log(string message) => Debug.Log(WrapMessage(message));
 
-        private void Error(string message) => Debug.LogError(WraMessage(message));
+        private void Error(string message) => Debug.LogError(WrapMessage(message));
 
-        private string WraMessage(string message) => $"[{GetType().Name}] {message}";
+        private string WrapMessage(string message) => $"[{GetType().Name}] {message}";
     }
 }
