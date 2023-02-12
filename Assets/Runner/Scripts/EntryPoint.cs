@@ -1,5 +1,7 @@
 using Runner.Scripts.Enums;
+using Runner.Scripts.Interfaces;
 using Runner.Scripts.Profile;
+using Runner.Scripts.Tool;
 using Runner.Services;
 using UnityEngine;
 
@@ -15,10 +17,14 @@ namespace Runner.Scripts
         
         private MainContoller _mainContoller;
 
+        private IAdsProvider _interstitialProvider;
+
         void Start()
         {
             var profilePlayer = new ProfilePlayer(_inputType, _playerSpeed, InitialState);
             _mainContoller = new MainContoller(_placeForUi, profilePlayer);
+
+            _interstitialProvider = new InterstitialAdsProvider();
 
             if (ServicesHandler.AdsService.IsInitialized) OnAdsInitialized();
             else ServicesHandler.AdsService.Initialized.AddListener(OnAdsInitialized);
@@ -27,10 +33,11 @@ namespace Runner.Scripts
         private void OnDestroy()
         {
             ServicesHandler.AdsService.Initialized.RemoveListener(OnAdsInitialized);
+            _interstitialProvider.UnsubscribeADS();
             _mainContoller.Dispose();
         }
 
-        private void OnAdsInitialized() => ServicesHandler.AdsService.InterstitialPlayer.Play();
+        private void OnAdsInitialized() => _interstitialProvider.Execute();
     }
 }
 

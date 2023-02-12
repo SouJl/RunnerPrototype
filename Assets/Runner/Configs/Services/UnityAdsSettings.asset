@@ -19,7 +19,7 @@ MonoBehaviour:
     _androidId: Interstitial_Android
     _iosId: Interstitial_iOS
   _rewarded:
-    _enabled: 0
+    _enabled: 1
     _androidId: Rewarded_Android
     _iosId: Rewarded_iOS
   _banner:
