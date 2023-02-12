@@ -10,7 +10,7 @@ namespace Services.Analytics
 
         public void SendEvent(string eventName)
         {
-            
+            AnalyticsService.Instance.CustomData(eventName, new Dictionary<string, object>());
         }
     }
 }

@@ -1,8 +1,6 @@
 using Runner.Scripts.Enums;
 using Runner.Scripts.Profile;
-using Services.Ads.UnityAds;
-using Services.Analytics;
-using Services.IAP;
+using Runner.Services;
 using UnityEngine;
 
 namespace Runner.Scripts 
@@ -12,9 +10,6 @@ namespace Runner.Scripts
         [SerializeField] private InputType _inputType;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private Transform _placeForUi;
-        [SerializeField] private AnalyticsManager _analytics;
-        [SerializeField] private UnityAdsService _adsService;
-        [SerializeField] private IAPSevice _iAPSevice;
 
         private const GameState InitialState = GameState.Start;
         
@@ -25,17 +20,17 @@ namespace Runner.Scripts
             var profilePlayer = new ProfilePlayer(_inputType, _playerSpeed, InitialState);
             _mainContoller = new MainContoller(_placeForUi, profilePlayer);
 
-            if (_adsService.IsInitialized) OnAdsInitialized();
-            else _adsService.Initialized.AddListener(OnAdsInitialized);
+            if (ServicesHandler.AdsService.IsInitialized) OnAdsInitialized();
+            else ServicesHandler.AdsService.Initialized.AddListener(OnAdsInitialized);
         }
 
         private void OnDestroy()
         {
-            _adsService.Initialized.RemoveListener(OnAdsInitialized);
+            ServicesHandler.AdsService.Initialized.RemoveListener(OnAdsInitialized);
             _mainContoller.Dispose();
         }
 
-        private void OnAdsInitialized() => _adsService.InterstitialPlayer.Play();
+        private void OnAdsInitialized() => ServicesHandler.AdsService.InterstitialPlayer.Play();
     }
 }
 

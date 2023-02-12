@@ -1,5 +1,6 @@
 ﻿using Runner.Scripts.Profile;
 using Runner.Scripts.Tool;
+using Runner.Services;
 
 namespace Runner.Scripts.Game
 {
@@ -18,6 +19,8 @@ namespace Runner.Scripts.Game
 
             var playerController = new PlayerController();
             AddController(playerController);
+
+            ServicesHandler.Analytics.SendGameStarted(profilePlayer.InputType.GetDescription());
         }
     }
 }

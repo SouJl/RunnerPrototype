@@ -2,6 +2,7 @@ using Runner.Scripts.Enums;
 using Runner.Scripts.Profile;
 using Runner.Scripts.Tool;
 using Runner.Scripts.View;
+using Runner.Services;
 using UnityEngine;
 
 namespace Runner.Scripts.Ui
@@ -18,6 +19,7 @@ namespace Runner.Scripts.Ui
             _view = LoadView(placeForUi);
             _view.Init(StartGame, OpenSettings, Exit);
 
+            ServicesHandler.Analytics.SendMainMenuOpen();
         }
 
         private MainMenuView LoadView(Transform placeForUi)

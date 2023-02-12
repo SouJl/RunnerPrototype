@@ -5,7 +5,13 @@ using UnityEngine;
 
 namespace Services.Analytics
 {
-    internal class AnalyticsManager:MonoBehaviour
+    internal interface IAnalyticsManager 
+    {
+        void SendMainMenuOpen();
+        void SendGameStarted(string gameInput);
+    }
+
+    internal class AnalyticsManager:MonoBehaviour, IAnalyticsManager
     {
         [SerializeField] private bool _useUnityAnalytics;
 
@@ -37,6 +43,16 @@ namespace Services.Analytics
             }
         }
 
+        public void SendMainMenuOpen() => SendEvent("mainMenuOpened");
+
+        public void SendGameStarted(string gameInput)
+        {
+            SendEvent("mainGameStarted", new Dictionary<string, object>
+            {
+                {"gameInputType", gameInput}
+            });
+        }
+
         private void SendEvent(string eventName) 
         {
             foreach (var service in _services)
@@ -48,5 +64,7 @@ namespace Services.Analytics
             foreach (var service in _services)
                 service.SendEvent(eventName, eventData);
         }
+
+      
     }
 }
