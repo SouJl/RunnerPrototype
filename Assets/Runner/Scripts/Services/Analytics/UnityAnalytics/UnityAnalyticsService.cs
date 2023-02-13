@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Services.IAP;
+using System.Collections.Generic;
 using Unity.Services.Analytics;
 namespace Services.Analytics
 {
@@ -12,19 +13,27 @@ namespace Services.Analytics
             AnalyticsService.Instance.CustomData(eventName, new Dictionary<string, object>());
         }
 
-        public void SendTransaction(string productId, long amount, string currency) 
+        public void SendTransaction(string productId, long amount, string currency, IEnumerable<IAPPayot> payots)
         {
+            var productsReceived = new Product();
+            productsReceived.Items = new List<Item>();
+
+            foreach (var payot in payots) 
+            {
+                productsReceived.Items.Add(new Item() { ItemName = payot.subType, ItemType = payot.payoutType.ToString(), ItemAmount = (long)payot.quantity });
+            }
 
             var productsSpent = new Product()
             {
-                RealCurrency = new RealCurrency() { RealCurrencyType = currency, RealCurrencyAmount = amount}
+                RealCurrency = new RealCurrency() { RealCurrencyType = currency, RealCurrencyAmount = amount }
             };
 
             AnalyticsService.Instance.Transaction(new TransactionParameters
             {
                 ProductID = productId,
+                ProductsReceived = productsReceived,
                 ProductsSpent = productsSpent,
-                TransactionName = "",
+                TransactionName = $"Test transaction - {productId}",
                 TransactionType = TransactionType.PURCHASE,
             });
         }

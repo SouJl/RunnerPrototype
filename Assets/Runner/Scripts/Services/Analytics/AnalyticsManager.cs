@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Services.IAP;
+using System.Collections.Generic;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Services.Analytics
 
         void SendMainMenuOpen();
         void SendGameStarted(string gameInput);
+        void SendTransaction(string productId, long amount, string currency, IEnumerable<IAPPayot> payots);
     }
 
     internal class AnalyticsManager:MonoBehaviour, IAnalyticsManager
@@ -79,6 +81,10 @@ namespace Services.Analytics
                 service.SendEvent(eventName, eventData);
         }
 
-      
+        public void SendTransaction(string productId, long amount, string currency, IEnumerable<IAPPayot> payots)
+        {
+            foreach (var service in _services)
+                service.SendTransaction(productId, amount, currency, payots);
+        }
     }
 }

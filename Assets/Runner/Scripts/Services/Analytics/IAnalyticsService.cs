@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Services.IAP;
+using System.Collections.Generic;
 
 namespace Services.Analytics
 {
@@ -6,5 +7,6 @@ namespace Services.Analytics
     {
         void SendEvent(string eventName);
         void SendEvent(string eventName, Dictionary<string, object> eventData);
+        void SendTransaction(string productId, long amount, string currency, IEnumerable<IAPPayot> payots);
     }
 }
