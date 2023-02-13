@@ -1,5 +1,4 @@
 using Runner.Scripts.Enums;
-using Runner.Scripts.Interfaces;
 using Runner.Scripts.Profile;
 using Runner.Scripts.Tool;
 using Runner.Scripts.View;
@@ -14,22 +13,22 @@ namespace Runner.Scripts.Ui
         private readonly ProfilePlayer _profilePlayer;
         private MainMenuView _view;
 
-        private IAdsProvider _rewardedAdsProvider;
+        private BaseAdsProvider _rewardedAdsProvider;
+        private BaseIAPProvider _buyProductProvdier;
 
         public MainMenuController(Transform placeForUi, ProfilePlayer profilePlayer) 
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame, OpenSettings, Exit, PlayRewardedADS);
+            _view.Init(StartGame, OpenSettings, Exit, PlayRewardedADS, BuyProduct);
 
             _rewardedAdsProvider = new RewardedAdsProvider();
+            _buyProductProvdier = new BuyProductIAPProvider();
 
-            _rewardedAdsProvider.OnADSFinished += RewardedAdsFinished;
-            _rewardedAdsProvider.OnADSCanceled += RewardedAdsCanceled;
+            SubscribeServices();
 
             ServicesHandler.Analytics.SendMainMenuOpen();
         }
-
 
         private MainMenuView LoadView(Transform placeForUi)
         {
@@ -38,12 +37,9 @@ namespace Runner.Scripts.Ui
             return objectView.GetComponent<MainMenuView>();
         }
 
-
         protected override void OnDispose()
         {
-            _rewardedAdsProvider.UnsubscribeADS();
-            _rewardedAdsProvider.OnADSFinished -= RewardedAdsFinished;
-            _rewardedAdsProvider.OnADSCanceled -= RewardedAdsCanceled;
+            UnsubscribeServices();
         }
 
         private void StartGame()
@@ -61,9 +57,33 @@ namespace Runner.Scripts.Ui
             _profilePlayer.CurrentState.Value = GameState.Exit;
         }
 
+        #region In MainMenu services methods
+
+        private void SubscribeServices() 
+        {
+            _rewardedAdsProvider.Subscribe();
+            _rewardedAdsProvider.OnTrueResult += RewardedAdsFinished;
+            _rewardedAdsProvider.OnFalseResult += RewardedAdsCanceled;
+
+            _buyProductProvdier.Subscribe();
+            _buyProductProvdier.OnTrueResult += BuyProductSucceeded;
+            _buyProductProvdier.OnFalseResult += BuyProductFailed;
+        }
+
+        private void UnsubscribeServices() 
+        {
+            _rewardedAdsProvider.Unsubscribe();
+            _rewardedAdsProvider.OnTrueResult -= RewardedAdsFinished;
+            _rewardedAdsProvider.OnFalseResult -= RewardedAdsCanceled;
+
+            _buyProductProvdier.Unsubscribe();
+            _rewardedAdsProvider.OnTrueResult -= BuyProductSucceeded;
+            _rewardedAdsProvider.OnFalseResult -= BuyProductFailed;
+        }
 
         private void PlayRewardedADS() => _rewardedAdsProvider.Execute();
 
+        private void BuyProduct(string buyProductId) => _buyProductProvdier.Execute(buyProductId);
 
         private void RewardedAdsFinished()
         {
@@ -74,6 +94,18 @@ namespace Runner.Scripts.Ui
         {
             Debug.Log("Receiving a reward for ads has been interrupted!");
         }
+
+        private void BuyProductSucceeded()
+        {
+            Debug.Log("Purchase succeed");
+        }
+
+        private void BuyProductFailed()
+        {
+            Debug.Log("Purchase failed");
+        }
+
+        #endregion
     }
 }
 

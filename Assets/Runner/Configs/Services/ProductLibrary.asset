@@ -16,6 +16,6 @@ MonoBehaviour:
   - _id: product_0
     _productType: 0
   - _id: product_1
-    _productType: 0
-  - _id: product_2
     _productType: 1
+  - _id: subscription_0
+    _productType: 2

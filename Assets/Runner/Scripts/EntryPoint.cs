@@ -17,7 +17,7 @@ namespace Runner.Scripts
         
         private MainContoller _mainContoller;
 
-        private IAdsProvider _interstitialProvider;
+        private BaseAdsProvider _interstitialProvider;
 
         void Start()
         {
@@ -25,6 +25,7 @@ namespace Runner.Scripts
             _mainContoller = new MainContoller(_placeForUi, profilePlayer);
 
             _interstitialProvider = new InterstitialAdsProvider();
+            _interstitialProvider.Subscribe();
 
             if (ServicesHandler.AdsService.IsInitialized) OnAdsInitialized();
             else ServicesHandler.AdsService.Initialized.AddListener(OnAdsInitialized);
@@ -33,7 +34,7 @@ namespace Runner.Scripts
         private void OnDestroy()
         {
             ServicesHandler.AdsService.Initialized.RemoveListener(OnAdsInitialized);
-            _interstitialProvider.UnsubscribeADS();
+            _interstitialProvider.Unsubscribe();
             _mainContoller.Dispose();
         }
 
