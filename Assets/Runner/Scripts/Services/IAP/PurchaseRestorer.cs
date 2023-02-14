@@ -18,7 +18,7 @@ namespace Services.IAP
             {
                 case RuntimePlatform.IPhonePlayer:
                 case RuntimePlatform.OSXPlayer:
-                    {
+                    {       
                         _extensionProvider.GetExtension<IAppleExtensions>().RestoreTransactions(OnRestoredTransactions);
                     break;
                     }
@@ -35,9 +35,16 @@ namespace Services.IAP
             }
         }
 
-        private void OnRestoredTransactions(bool result)
+        private void OnRestoredTransactions(bool result, string error) 
         {
-            Log($"RestorePurchase continuing: {result}. If no further messages, no purchases available to restore.");
+            if (result)
+            {
+                Log($"RestorePurchase continuing. If no further messages, no purchases available to restore.");
+            }
+            else
+            {
+                Log($"RestorePurchase failed: {error}");
+            }
         }
 
         private void Log(string message) => Debug.Log(WrapMessage(message));

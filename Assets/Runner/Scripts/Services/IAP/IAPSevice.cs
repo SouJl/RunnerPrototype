@@ -72,6 +72,12 @@ namespace Services.IAP
             Error("IAP Initialization Failed");
         }
 
+        void IStoreListener.OnInitializeFailed(InitializationFailureReason error, string message)
+        {
+            IsInitialized = true;
+            Error($"IAP Initialization Failed with message: {message}");
+        }
+
         PurchaseProcessingResult IStoreListener.ProcessPurchase(PurchaseEventArgs purchaseEvent)
         {
             if (_purchaseValidator.Validate(purchaseEvent)) 
@@ -143,5 +149,7 @@ namespace Services.IAP
         private void Error(string message) => Debug.LogError(WrapMessage(message));
 
         private string WrapMessage(string message) => $"[{GetType().Name}] {message}";
+
+
     }
 }
