@@ -1,5 +1,6 @@
-﻿using Services.IAP;
+﻿using Services.IAP.Settings;
 using System.Collections.Generic;
+using UnityEngine.Purchasing;
 
 namespace Services.Analytics
 {
@@ -7,6 +8,6 @@ namespace Services.Analytics
     {
         void SendEvent(string eventName);
         void SendEvent(string eventName, Dictionary<string, object> eventData);
-        void SendTransaction(string productId, long amount, string currency, IEnumerable<IAPPayot> payots);
+        void SendTransaction(string productId, long amount, string currency, IEnumerable<(PayoutType type, string subtype, double quantity)> payots);
     }
 }

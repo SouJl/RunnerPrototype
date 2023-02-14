@@ -15,7 +15,16 @@ MonoBehaviour:
   _products:
   - _id: product_0
     _productType: 0
+    _payots:
+    - <payoutType>k__BackingField: 1
+      <subType>k__BackingField: Gold
+      <quantity>k__BackingField: 10
+    - <payoutType>k__BackingField: 2
+      <subType>k__BackingField: HealthPot
+      <quantity>k__BackingField: 2
   - _id: product_1
     _productType: 1
+    _payots: []
   - _id: subscription_0
     _productType: 2
+    _payots: []

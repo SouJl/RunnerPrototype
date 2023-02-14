@@ -1,6 +1,7 @@
-﻿using Services.IAP;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Unity.Services.Analytics;
+using UnityEngine.Purchasing;
+
 namespace Services.Analytics
 {
     internal class UnityAnalyticsService : IAnalyticsService
@@ -13,17 +14,17 @@ namespace Services.Analytics
             AnalyticsService.Instance.CustomData(eventName, new Dictionary<string, object>());
         }
 
-        public void SendTransaction(string productId, long amount, string currency, IEnumerable<IAPPayot> payots)
+        public void SendTransaction(string productId, long amount, string currency, IEnumerable<(PayoutType type, string subtype, double quantity)> payots)
         {
-            var productsReceived = new Product();
+            var productsReceived = new Unity.Services.Analytics.Product();
             productsReceived.Items = new List<Item>();
 
             foreach (var payot in payots) 
             {
-                productsReceived.Items.Add(new Item() { ItemName = payot.subType, ItemType = payot.payoutType.ToString(), ItemAmount = (long)payot.quantity });
+                productsReceived.Items.Add(new Item() { ItemName = payot.subtype, ItemType = payot.type.ToString(), ItemAmount = (long)payot.quantity });
             }
 
-            var productsSpent = new Product()
+            var productsSpent = new Unity.Services.Analytics.Product()
             {
                 RealCurrency = new RealCurrency() { RealCurrencyType = currency, RealCurrencyAmount = amount }
             };

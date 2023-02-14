@@ -7,20 +7,6 @@ using UnityEngine.Purchasing;
 
 namespace Services.IAP
 {
-    internal class IAPPayot
-    {
-        public PayoutType payoutType { get; }
-        public string subType { get; }
-        public double quantity { get; }
-
-        public IAPPayot(PayoutType payoutType, string subType, double quantity) 
-        {
-            this.payoutType = payoutType;
-            this.subType = subType;
-            this.quantity = quantity;
-        }
-    }
-
     internal class IAPSevice : MonoBehaviour, IIAPService, IStoreListener
     {
         [Header("Components")]
@@ -54,14 +40,14 @@ namespace Services.IAP
             var purchasingModule = StandardPurchasingModule.Instance();
             var builder = ConfigurationBuilder.Instance(purchasingModule);
 
-            var payot = new List<PayoutDefinition>();
-
-            payot.Add(new PayoutDefinition(PayoutType.Currency, "Gold", 50));
-            payot.Add(new PayoutDefinition(PayoutType.Item, "HealhPot", 3));
-
             foreach(var product in _productLibrary.Products)
             {
-                builder.AddProduct(product.Id, product.ProductType, null, payot);
+                var payots = new List<PayoutDefinition>();
+                foreach (var payot in product.Payots)
+                {
+                    payots.Add(new PayoutDefinition(payot.payoutType, payot.subType, payot.quantity));
+                }
+                builder.AddProduct(product.Id, product.ProductType, null, payots);
             }
 
             Log("Products initialized");
@@ -110,12 +96,11 @@ namespace Services.IAP
             string currency = product.metadata.isoCurrencyCode;
             decimal currencyAmount = product.metadata.localizedPrice;
 
-            var payots = new List<IAPPayot>();
+            var payots = new List<(PayoutType type, string subtype, double quantity)>();
             foreach(var payout in product.definition.payouts)
             {
-                payots.Add(new IAPPayot(payout.type, payout.subtype, payout.quantity));
-            }
-            
+                payots.Add((payout.type, payout.subtype, payout.quantity));
+            }        
             ServicesHandler.Analytics.SendTransaction(productId, (long)currencyAmount, currency, payots);
             
             Log($"Purchased: {productId}");
