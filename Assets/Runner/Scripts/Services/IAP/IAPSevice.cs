@@ -95,13 +95,8 @@ namespace Services.IAP
             string productId = product.definition.id;
             string currency = product.metadata.isoCurrencyCode;
             decimal currencyAmount = product.metadata.localizedPrice;
-
-            var payots = new List<(PayoutType type, string subtype, double quantity)>();
-            foreach(var payout in product.definition.payouts)
-            {
-                payots.Add((payout.type, payout.subtype, payout.quantity));
-            }        
-            ServicesHandler.Analytics.SendTransaction(productId, (long)currencyAmount, currency, payots);
+            
+            ServicesHandler.Analytics.SendTransaction(productId, (long)currencyAmount, currency, product.definition.payouts);
             
             Log($"Purchased: {productId}");
             PurchaseSucceed?.Invoke();

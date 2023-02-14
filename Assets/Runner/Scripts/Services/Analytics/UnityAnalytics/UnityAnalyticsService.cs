@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Services.IAP.Settings;
+using System.Collections.Generic;
 using Unity.Services.Analytics;
 using UnityEngine.Purchasing;
 
@@ -14,7 +15,7 @@ namespace Services.Analytics
             AnalyticsService.Instance.CustomData(eventName, new Dictionary<string, object>());
         }
 
-        public void SendTransaction(string productId, long amount, string currency, IEnumerable<(PayoutType type, string subtype, double quantity)> payots)
+        public void SendTransaction(string productId, long amount, string currency, IEnumerable<PayoutDefinition> payots)
         {
             var productsReceived = new Unity.Services.Analytics.Product();
             productsReceived.Items = new List<Item>();

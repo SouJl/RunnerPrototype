@@ -5,12 +5,19 @@ using UnityEngine.Purchasing;
 
 namespace Services.IAP.Settings
 {
+    internal interface IiapPayot 
+    {
+        PayoutType payoutType { get; }
+        string subType { get; }
+        long quantity { get; }
+    }
+
     [Serializable]
-    internal class IAPPayot
+    internal class IAPPayot : IiapPayot
     {
         [field : SerializeField] public PayoutType payoutType { get; private set; }
         [field: SerializeField] public string subType { get; private set; }
-        [field: SerializeField] public double quantity { get; private set; }
+        [field: SerializeField] public long quantity { get; private set; }
     }
 
     [Serializable]
@@ -22,6 +29,6 @@ namespace Services.IAP.Settings
 
         public string Id => _id;
         public ProductType ProductType => _productType;
-        public IReadOnlyCollection<IAPPayot> Payots => _payots;
+        public IReadOnlyCollection<IiapPayot> Payots => _payots;
     }
 }
