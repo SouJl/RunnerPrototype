@@ -654,6 +654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _useUnityAnalytics: 1
+  _sendMainMenuOpenEnable: 1
+  _sendGameStartedEnabl: 1
 --- !u!1 &1892734275
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ebf475fbf688244a4ae582c53fca6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputType: 0
+  _inputType: 1
   _playerSpeed: 5
   _placeForUi: {fileID: 912486459}

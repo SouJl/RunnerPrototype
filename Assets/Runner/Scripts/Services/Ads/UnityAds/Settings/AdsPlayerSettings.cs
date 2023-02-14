@@ -19,7 +19,7 @@ namespace Services.Ads.UnityAds.Settings
             Application.platform switch
             {
                 RuntimePlatform.Android => _androidId,
-                RuntimePlatform.IPhonePlayer => _iosId;
+                RuntimePlatform.IPhonePlayer => _iosId,
                 _ => ""
             };
 #endif
