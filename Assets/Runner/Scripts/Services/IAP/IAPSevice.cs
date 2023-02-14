@@ -1,6 +1,7 @@
 ﻿using Runner.Services;
 using Services.IAP.Settings;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Purchasing;
@@ -40,7 +41,7 @@ namespace Services.IAP
             var purchasingModule = StandardPurchasingModule.Instance();
             var builder = ConfigurationBuilder.Instance(purchasingModule);
 
-            foreach(var product in _productLibrary.Products)
+            foreach (var product in _productLibrary.Products)
             {
                 var payots = new List<PayoutDefinition>();
                 foreach (var payot in product.Payots)
@@ -65,7 +66,7 @@ namespace Services.IAP
 
             Log("IAP Initialized");
         }
-        
+
         void IStoreListener.OnInitializeFailed(InitializationFailureReason error)
         {
             IsInitialized = true;
@@ -80,7 +81,7 @@ namespace Services.IAP
 
         PurchaseProcessingResult IStoreListener.ProcessPurchase(PurchaseEventArgs purchaseEvent)
         {
-            if (_purchaseValidator.Validate(purchaseEvent)) 
+            if (_purchaseValidator.Validate(purchaseEvent))
             {
                 OnPurchaseSucceed(purchaseEvent.purchasedProduct);
             }
@@ -96,15 +97,15 @@ namespace Services.IAP
             OnPurchaseFailed(product.definition.id, failureReason.ToString());
         }
 
-        private void OnPurchaseSucceed(UnityEngine.Purchasing.Product product) 
+        private void OnPurchaseSucceed(UnityEngine.Purchasing.Product product)
         {
             string productId = product.definition.id;
             string currency = product.metadata.isoCurrencyCode;
             decimal currencyAmount = product.metadata.localizedPrice;
-            
+
             ServicesHandler.Analytics.SendTransaction(productId, (long)currencyAmount, currency, product.definition.payouts);
-            
-            Log($"Purchased: {productId}");
+
+            Log($"Purchased: {productId}. Payots: {string.Join(" , ", product.definition.payouts.Select(p => p.subtype))}");
             PurchaseSucceed?.Invoke();
         }
 
@@ -116,11 +117,11 @@ namespace Services.IAP
 
         public void Buy(string id)
         {
-            if (IsInitialized) 
+            if (IsInitialized)
             {
                 _controller.InitiatePurchase(id);
             }
-            else 
+            else
             {
                 Error($"Buy {id} FAIL. Not Initialized");
             }
@@ -134,11 +135,11 @@ namespace Services.IAP
 
         public void RestorePurchases()
         {
-            if (IsInitialized) 
+            if (IsInitialized)
             {
                 _purchaseRestorer.Restore();
             }
-            else 
+            else
             {
                 Error("RestorePurchases FAIL. Not Initialized");
             }
