@@ -14,18 +14,10 @@ namespace Features.Inventory.Items
         public ItemsRepository(IEnumerable<ItemConfig> configs) : base(configs)
         { }
 
-        protected override string GetKey(ItemConfig config) =>
+        protected override string GetKey(ItemConfig config) => 
             config.Id;
 
         protected override IItem CreateItem(ItemConfig config) =>
-            new Item
-            (
-                config.Id,
-                new ItemInfo
-                (
-                    config.Title,
-                    config.Icon
-                )
-            );
+            new Item(config.Id, new ItemInfo(config.Title, config.Icon));
     }
 }

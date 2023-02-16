@@ -8,9 +8,9 @@ namespace Runner.Scripts
     internal abstract class BaseController : IDisposable
     {
         private List<BaseController> _baseControllers;
+        private List<IRepository> _repositories;
         private List<GameObject> _gameObjects;
         private bool _isDisposed;
-
 
         public void Dispose()
         {
@@ -19,9 +19,20 @@ namespace Runner.Scripts
             _isDisposed = true;
 
             DisposeBaseControllers();
+            DisposeRepositories();
             DisposeGameObjects();
 
             OnDispose();
+        }
+
+        private void DisposeRepositories()
+        {
+            if (_repositories == null) return;
+
+            foreach (var repository in _repositories)
+                repository.Dispose();
+
+            _repositories.Clear();
         }
 
         private void DisposeBaseControllers()
@@ -48,6 +59,12 @@ namespace Runner.Scripts
         {
             _baseControllers ??= new List<BaseController>();
             _baseControllers.Add(baseController);
+        }
+
+        protected void AddRepository(IRepository repository) 
+        {
+            _repositories ??= new List<IRepository>();
+            _repositories.Add(repository);
         }
 
         protected void AddGameObject(GameObject gameObject)

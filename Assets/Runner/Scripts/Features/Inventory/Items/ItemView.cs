@@ -20,8 +20,6 @@ namespace Features.Inventory.Items
         [SerializeField] private GameObject _unselectedBackground;
 
 
-        private void OnDestroy() => Deinit();
-
         public void Init(IItem item, UnityAction clickAction)
         {
             _text.text = item.Info.Title;
@@ -36,7 +34,6 @@ namespace Features.Inventory.Items
             _button.onClick.RemoveAllListeners();
         }
 
-
         public void Select() => SetSelected(true);
         public void Unselect() => SetSelected(false);
 
@@ -45,5 +42,7 @@ namespace Features.Inventory.Items
             _selectedBackground.SetActive(isSelected);
             _unselectedBackground.SetActive(!isSelected);
         }
+
+        private void OnDestroy() => Deinit();
     }
 }

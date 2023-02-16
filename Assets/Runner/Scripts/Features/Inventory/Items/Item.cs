@@ -8,6 +8,18 @@ namespace Features.Inventory.Items
         ItemInfo Info { get; }
     }
 
+    internal readonly struct ItemInfo
+    {
+        public string Title { get; }
+        public Sprite Icon { get; }
+
+        public ItemInfo(string title, Sprite icon)
+        {
+            Title = title;
+            Icon = icon;
+        }
+    }
+
     internal class Item : IItem
     {
         public string Id { get; }
@@ -20,15 +32,5 @@ namespace Features.Inventory.Items
         }
     }
 
-    internal readonly struct ItemInfo
-    {
-        public string Title { get; }
-        public Sprite Icon { get; }
 
-        public ItemInfo(string title, Sprite icon)
-        {
-            Title = title;
-            Icon = icon;
-        }
-    }
 }
