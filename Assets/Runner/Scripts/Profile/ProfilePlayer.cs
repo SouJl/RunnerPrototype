@@ -1,6 +1,7 @@
 ﻿using Runner.Scripts.Tool;
 using Runner.Scripts.Enums;
 using Runner.Scripts.Game;
+using Features.Inventory;
 
 namespace Runner.Scripts.Profile
 {
@@ -9,6 +10,7 @@ namespace Runner.Scripts.Profile
         public readonly SubscriptionProperty<GameState> CurrentState;
         public readonly InputType InputType;
         public readonly PlayerModel Player;
+        public readonly InventoryModel Inventory;
 
         public ProfilePlayer(InputType inputType, float speed, GameState initialState) : this(inputType, speed)
         {
@@ -20,6 +22,7 @@ namespace Runner.Scripts.Profile
             CurrentState = new SubscriptionProperty<GameState>();
             InputType = inputType;
             Player = new PlayerModel(speed);
+            Inventory = new InventoryModel();
         }
     }
 }
