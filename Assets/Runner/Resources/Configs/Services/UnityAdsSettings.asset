@@ -15,11 +15,11 @@ MonoBehaviour:
   _androidGameId: 5156673
   _iosGameId: 5156672
   _interstitial:
-    _enabled: 1
+    _enabled: 0
     _androidId: Interstitial_Android
     _iosId: Interstitial_iOS
   _rewarded:
-    _enabled: 1
+    _enabled: 0
     _androidId: Rewarded_Android
     _iosId: Rewarded_iOS
   _banner:

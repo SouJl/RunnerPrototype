@@ -17,13 +17,14 @@ namespace Features.Storage
 
     internal class StorageController : BaseController, IShedController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Storage/StorageView");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Storage/UpgradeItemsDataConfig");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/StorageView");
+        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/UpgradeItemsDataConfig");
 
         private readonly StorageView _view;
         private readonly ProfilePlayer _profilePlayer;
         private readonly InventoryController _inventoryController;
         private readonly UpgradeHandlersRepository _upgradeHandlersRepository;
+      
         public StorageController(
             [NotNull] Transform placeForUi,
             [NotNull] ProfilePlayer profilePlayer)
@@ -34,11 +35,11 @@ namespace Features.Storage
             _profilePlayer 
                 = profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
 
-            _upgradeHandlersRepository = CreateRepository();
-            _inventoryController = CreateInventoryController(placeForUi);
             _view = LoadView(placeForUi);
-
             _view.Init(Apply, Back);
+
+            _upgradeHandlersRepository = CreateRepository();
+            _inventoryController = CreateInventoryController(_view.InventoryPlaceUi);
         }
 
         private UpgradeHandlersRepository CreateRepository()

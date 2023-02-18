@@ -7,6 +7,7 @@ namespace Runner.Scripts.Enums
         Exit,
         Start, 
         Settings,
+        Storage,
         Game
     }
 }

@@ -12,10 +12,15 @@ namespace Features.Storage
 
     internal class StorageView : MonoBehaviour, IStorageView
     {
+
+        [SerializeField] private Transform _inventoryPlaceUi;
+
         [SerializeField] private Button _buttonApply;
         [SerializeField] private Button _buttonBack;
 
         private void OnDestroy() => Deinit();
+
+        public Transform InventoryPlaceUi => _inventoryPlaceUi;
 
         public void Init(UnityAction apply, UnityAction back)
         {

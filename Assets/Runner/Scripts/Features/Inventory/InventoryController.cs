@@ -10,12 +10,13 @@ namespace Features.Inventory
 {
     internal interface IInventoryController
     {
+
     }
 
     internal class InventoryController : BaseController, IInventoryController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Inventory/InventoryView");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Inventory/ItemsDataConfig");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/InventoryView");
+        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/ItemsDataConfig");
 
         private readonly InventoryView _view;
         private readonly IInventoryModel _model;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Features.Storage.Upgrade
 {
-    [CreateAssetMenu(fileName = nameof(UpgradeItemConfig), menuName = "Configs/" + nameof(UpgradeItemConfig))]
+    [CreateAssetMenu(fileName = nameof(UpgradeItemsDataConfig), menuName = "Configs/" + nameof(UpgradeItemsDataConfig))]
     internal class UpgradeItemsDataConfig:ScriptableObject
     {
         [SerializeField] private UpgradeItemConfig[] _itemCongigs;
