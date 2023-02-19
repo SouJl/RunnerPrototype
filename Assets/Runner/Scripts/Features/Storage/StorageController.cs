@@ -11,14 +11,14 @@ using UnityEngine;
 
 namespace Features.Storage
 {
-    internal interface IShedController
+    internal interface IStorageController
     {
     }
 
-    internal class StorageController : BaseController, IShedController
+    internal class StorageController : BaseController, IStorageController
     {
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/StorageView");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/UpgradeItemsDataConfig");
+        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Upgrades/UpgradeItemsDataConfig");
 
         private readonly StorageView _view;
         private readonly ProfilePlayer _profilePlayer;
@@ -78,13 +78,15 @@ namespace Features.Storage
                 _upgradeHandlersRepository.Items);
 
             _profilePlayer.CurrentState.Value = GameState.Start;
-            Log($"Apply. Current Speed: {_profilePlayer.Player.Speed}");
+            Log($"Apply. Current Player stats: " +
+                $"\n Speed - > {_profilePlayer.Player.Speed}; JumpHight - > {_profilePlayer.Player.JumpHeight}");
         }
 
         private void Back()
         {
             _profilePlayer.CurrentState.Value = GameState.Start;
-            Log($"Back. Current Speed: {_profilePlayer.Player.Speed}");
+            Log($"Apply. Current Player stats: " +
+                 $"\n Speed - > {_profilePlayer.Player.Speed}; JumpHight - > {_profilePlayer.Player.JumpHeight}");
         }
 
 

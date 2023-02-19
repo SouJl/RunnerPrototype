@@ -18,6 +18,6 @@ namespace Features.Inventory.Items
             config.Id;
 
         protected override IItem CreateItem(ItemConfig config) =>
-            new Item(config.Id, new ItemInfo(config.Title, config.Icon));
+            new Item(config.Id, new ItemInfo(config.Title, config.Icon, config.Info));
     }
 }

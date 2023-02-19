@@ -8,5 +8,6 @@ namespace Features.Inventory.Items
         [field: SerializeField] public string Id { get; private set; }
         [field: SerializeField] public string Title { get; private set; }
         [field: SerializeField] public Sprite Icon { get; private set; }
+        [field: SerializeField] public string Info { get; private set; }
     }
 }

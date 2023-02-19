@@ -13,10 +13,13 @@ namespace Features.Inventory.Items
         public string Title { get; }
         public Sprite Icon { get; }
 
-        public ItemInfo(string title, Sprite icon)
+        public string Info { get; }
+
+        public ItemInfo(string title, Sprite icon, string info)
         {
             Title = title;
             Icon = icon;
+            Info = info;
         }
     }
 

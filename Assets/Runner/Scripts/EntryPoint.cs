@@ -10,6 +10,7 @@ namespace Runner.Scripts
     {
         [SerializeField] private InputType _inputType;
         [SerializeField] private float _playerSpeed;
+        [SerializeField] private float _playerJumpHeight;
         [SerializeField] private Transform _placeForUi;
 
         private const GameState InitialState = GameState.Start;
@@ -20,7 +21,7 @@ namespace Runner.Scripts
 
         void Start()
         {
-            var profilePlayer = new ProfilePlayer(_inputType, _playerSpeed, InitialState);
+            var profilePlayer = new ProfilePlayer(_inputType, _playerSpeed, _playerJumpHeight, InitialState);
             _mainContoller = new MainContoller(_placeForUi, profilePlayer);
 
             _interstitialProvider = new InterstitialAdsProvider();

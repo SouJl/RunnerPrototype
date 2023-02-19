@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99fb6453233de649a25945b40e24b8d, type: 3}
-  m_Name: ItemConfig
+  m_Script: {fileID: 11500000, guid: 8db707e483ac5f7419bf3ed01321fa02, type: 3}
+  m_Name: UpgradeJumpHeight
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: item_0
-  <Title>k__BackingField: Shuriken
-  <Icon>k__BackingField: {fileID: 21300000, guid: ad3c197506def8f468e7bb772411e6af, type: 3}
+  _itemConfig: {fileID: 11400000, guid: dbf4a8a55f29d9d4fb65a0a78b49a647, type: 2}
+  <Type>k__BackingField: 2
+  <Value>k__BackingField: 2
