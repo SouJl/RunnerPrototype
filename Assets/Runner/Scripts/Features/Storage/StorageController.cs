@@ -44,7 +44,7 @@ namespace Features.Storage
 
         private UpgradeHandlersRepository CreateRepository()
         {
-            UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfig(_dataSourcePath);
+            UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfigs(_dataSourcePath);
             var repository = new UpgradeHandlersRepository(upgradeConfigs);
             AddRepository(repository);
 
