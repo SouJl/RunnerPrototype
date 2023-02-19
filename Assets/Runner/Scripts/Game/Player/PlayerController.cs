@@ -1,14 +1,17 @@
-﻿using Runner.Scripts.Tool;
+﻿using Runner.Scripts.Interfaces;
+using Runner.Scripts.Tool;
 using Runner.Scripts.View;
 using UnityEngine;
 
 namespace Runner.Scripts.Game
 {
-    internal class PlayerController : BaseController
+    internal class PlayerController : BaseController, IAbilityActivator
     {
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Player");
 
         private readonly PlayerView _view;
+
+        public GameObject ViewGameObject => _view.gameObject;
 
         public PlayerController() 
         {

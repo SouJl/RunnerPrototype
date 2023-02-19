@@ -56,7 +56,7 @@ namespace Runner.Scripts
                     }
                 case GameState.Game: 
                     {
-                        _gameController = new GameController(_profilePlayer);
+                        _gameController = new GameController(_placeForUi, _profilePlayer);
                         break;
                     }
                 case GameState.Exit: 

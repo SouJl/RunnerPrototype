@@ -12,8 +12,8 @@ namespace Features.AbilitySystem
 
     internal class AbilitiesController : BaseController, IAbilitiesController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Ability/AbilitiesView");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Ability/AbilityItemConfigDataSource");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/AbilitiesView");
+        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Ability/AbilityItemsDataConfig");
 
         private readonly AbilitiesView _view;
         private readonly AbilitiesRepository _repository;
