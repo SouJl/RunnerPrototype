@@ -19,6 +19,7 @@ namespace Features.AbilitySystem
             config.Type switch
             {
                 AbilityType.Projectile => new ProjectileAbility(config),
+                AbilityType.Jump => new JumpAbility(config),
                 _ => StubAbility.Default
             };
     }

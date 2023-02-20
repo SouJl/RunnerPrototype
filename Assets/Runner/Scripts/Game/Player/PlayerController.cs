@@ -8,13 +8,17 @@ namespace Runner.Scripts.Game
     internal class PlayerController : BaseController, IAbilityActivator
     {
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Player");
-
+        
+        private readonly PlayerModel _model;
         private readonly PlayerView _view;
 
         public GameObject ViewGameObject => _view.gameObject;
+        public float JumpHeight => _model.JumpHeight;
+        public IPhysicsUnit PhysicsUnit => _view;
 
-        public PlayerController() 
+        public PlayerController(PlayerModel model) 
         {
+            _model = model;
             _view = LoadView();
         }
 

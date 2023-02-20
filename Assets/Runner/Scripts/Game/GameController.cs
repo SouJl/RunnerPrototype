@@ -24,7 +24,7 @@ namespace Runner.Scripts.Game
             _rightMoveDiff = new SubscriptionProperty<float>();
 
 
-            _playerController = CreatePlayerController();
+            _playerController = CreatePlayerController(profilePlayer);
             _inputController = CreateInputController(profilePlayer, _leftMoveDiff, _rightMoveDiff);
             _abilitiesController = CreateAbilitiesController(placeForUi, _playerController);
             _tapeBackgroundController = CreateTapeBackground(_leftMoveDiff, _rightMoveDiff); 
@@ -32,9 +32,9 @@ namespace Runner.Scripts.Game
             ServicesHandler.Analytics.SendGameStarted(profilePlayer.InputType.GetDescription());
         }
 
-        private PlayerController CreatePlayerController()
+        private PlayerController CreatePlayerController(ProfilePlayer profilePlayer)
         {
-            var playerController = new PlayerController();
+            var playerController = new PlayerController(profilePlayer.Player);
             AddController(playerController);
 
             return playerController;

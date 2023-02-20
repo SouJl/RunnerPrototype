@@ -703,5 +703,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputType: 0
   _playerSpeed: 5
-  _playerJumpHeight: 10
+  _playerJumpHeight: 5
   _placeForUi: {fileID: 912486459}

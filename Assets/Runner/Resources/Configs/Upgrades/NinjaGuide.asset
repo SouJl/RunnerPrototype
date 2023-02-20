@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829440b043f34334a899eaa3802095e3, type: 3}
-  m_Name: AbilityItemsDataConfig
+  m_Script: {fileID: 11500000, guid: 8db707e483ac5f7419bf3ed01321fa02, type: 3}
+  m_Name: NinjaGuide
   m_EditorClassIdentifier: 
-  _abilityConfigs:
-  - {fileID: 11400000, guid: 48f39e9cd1b5bb84ba6357f4dd477678, type: 2}
-  - {fileID: 11400000, guid: 37a65e8178aa58a4a831e1946f9aba4e, type: 2}
+  _itemConfig: {fileID: 11400000, guid: 62b21cb1df6a40046897cfdb5fb3e513, type: 2}
+  <Type>k__BackingField: 1
+  <Value>k__BackingField: 10
