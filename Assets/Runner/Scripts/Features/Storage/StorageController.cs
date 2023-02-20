@@ -78,15 +78,13 @@ namespace Features.Storage
                 _upgradeHandlersRepository.Items);
 
             _profilePlayer.CurrentState.Value = GameState.Start;
-            Log($"Apply. Current Player stats: " +
-                $"\n Speed - > {_profilePlayer.Player.Speed}; JumpHight - > {_profilePlayer.Player.JumpHeight}");
+            LogPlayerStats(_profilePlayer.Player);
         }
 
         private void Back()
         {
             _profilePlayer.CurrentState.Value = GameState.Start;
-            Log($"Apply. Current Player stats: " +
-                 $"\n Speed - > {_profilePlayer.Player.Speed}; JumpHight - > {_profilePlayer.Player.JumpHeight}");
+            LogPlayerStats(_profilePlayer.Player);
         }
 
 
@@ -99,6 +97,12 @@ namespace Features.Storage
                 if (upgradeHandlers.TryGetValue(itemId, out IUpgradeHandler handler))
                     handler.Upgrade(upgradable);
         }
+
+        private void LogPlayerStats(IUpgradable upgradableUnit) =>
+             Log($"Apply. Current Player stats: " +
+               $"\n Speed - > {upgradableUnit.Speed}; " +
+               $"JumpHight - > {upgradableUnit.JumpHeight};" +
+               $"Helh - > {upgradableUnit.Health}");
 
         private void Log(string message) =>
             Debug.Log($"[{GetType().Name}] {message}");

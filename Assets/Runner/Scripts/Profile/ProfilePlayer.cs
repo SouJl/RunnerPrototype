@@ -12,16 +12,20 @@ namespace Runner.Scripts.Profile
         public readonly PlayerModel Player;
         public readonly InventoryModel Inventory;
 
-        public ProfilePlayer(InputType inputType, float speed, float jumpHeight, GameState initialState) : this(inputType, speed, jumpHeight)
+        public ProfilePlayer(InputType inputType, 
+            float speed, 
+            float jumpHeight,
+            float health, 
+            GameState initialState) : this(inputType, speed, jumpHeight, health)
         {
             CurrentState.Value = initialState;
         }
 
-        public ProfilePlayer(InputType inputType, float speed, float jumpHeight)
+        public ProfilePlayer(InputType inputType, float speed, float jumpHeight, float health)
         {
             CurrentState = new SubscriptionProperty<GameState>();
             InputType = inputType;
-            Player = new PlayerModel(speed, jumpHeight);
+            Player = new PlayerModel(speed, jumpHeight, health);
             Inventory = new InventoryModel();
         }
     }

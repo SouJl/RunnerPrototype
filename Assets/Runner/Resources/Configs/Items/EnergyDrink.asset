@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a99fb6453233de649a25945b40e24b8d, type: 3}
-  m_Name: NinjaGuide
+  m_Name: EnergyDrink
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: item_njg
-  <Title>k__BackingField: Ninha Guide
-  <Icon>k__BackingField: {fileID: 21300000, guid: 1b7b5fa8e59f18e4485f9522cf61862a, type: 3}
+  <Id>k__BackingField: item_energyDrink
+  <Title>k__BackingField: Energy Drink
+  <Icon>k__BackingField: {fileID: 423680870, guid: 396a7e5e89d955946b87848ceecc58fb, type: 3}
   <Info>k__BackingField: Increase player speed by 10 points

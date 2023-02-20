@@ -4,6 +4,8 @@
     {
         float Speed { get; set; }
         float JumpHeight { get; set; }
+        float Health { get; set; }
+
         void Restore();
     }
 }

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a99fb6453233de649a25945b40e24b8d, type: 3}
-  m_Name: Boots
+  m_Name: CupNoodle
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: item_boots
-  <Title>k__BackingField: "\u0421omfortable Sneakers"
-  <Icon>k__BackingField: {fileID: -1052665843, guid: 396a7e5e89d955946b87848ceecc58fb, type: 3}
-  <Info>k__BackingField: Increase player jump height by 2 points
+  <Id>k__BackingField: item_CupNoodle
+  <Title>k__BackingField: Cup Noodle
+  <Icon>k__BackingField: {fileID: 97726364, guid: 396a7e5e89d955946b87848ceecc58fb, type: 3}
+  <Info>k__BackingField: Increase player health by 20 points

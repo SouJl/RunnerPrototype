@@ -704,4 +704,5 @@ MonoBehaviour:
   _inputType: 0
   _playerSpeed: 5
   _playerJumpHeight: 5
+  _playerHealth: 100
   _placeForUi: {fileID: 912486459}

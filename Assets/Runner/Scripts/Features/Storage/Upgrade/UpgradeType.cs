@@ -5,5 +5,6 @@
         None,
         Speed,
         JumpHeight,
+        Health,
     }
 }

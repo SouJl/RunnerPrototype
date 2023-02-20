@@ -22,6 +22,7 @@ namespace Features.Storage.Upgrade
             {
                 UpgradeType.Speed => new SpeedUpgradeHandler(config.Value),
                 UpgradeType.JumpHeight => new JumpHeightUpgradeHandler(config.Value),
+                UpgradeType.Health => new HealthUpgradeHandler(config.Value),
                 _ => StubUpgradeHandler.Default
             };
     }

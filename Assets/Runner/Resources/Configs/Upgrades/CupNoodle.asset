@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559e501081454ac4290f31b54ff97b70, type: 3}
-  m_Name: JumpAbility
+  m_Script: {fileID: 11500000, guid: 8db707e483ac5f7419bf3ed01321fa02, type: 3}
+  m_Name: CupNoodle
   m_EditorClassIdentifier: 
-  _itemConfig: {fileID: 11400000, guid: 9689a57281cefc541bcfec49af57c1bb, type: 2}
-  <Type>k__BackingField: 2
-  <ExecuteObject>k__BackingField: {fileID: 0}
-  <Value>k__BackingField: 0.01
+  _itemConfig: {fileID: 11400000, guid: e2e332f3486ae0b408ee426f97854ba8, type: 2}
+  <Type>k__BackingField: 3
+  <Value>k__BackingField: 20
