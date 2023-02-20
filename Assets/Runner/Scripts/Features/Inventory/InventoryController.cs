@@ -62,6 +62,8 @@ namespace Features.Inventory
                 UnequipItem(itemId);
             else
                 EquipItem(itemId);
+
+            _descriptionController.Show(itemId);
         }
 
         private ItemsRepository CreateRepository()
@@ -87,14 +89,12 @@ namespace Features.Inventory
         {
             _view.Select(itemId);
             _model.EquipItem(itemId);
-            _descriptionController.Show(itemId);
         }
 
         private void UnequipItem(string itemId)
         {
             _view.Unselect(itemId);
             _model.UnequipItem(itemId);
-            _descriptionController.Hide(itemId);
         }
     }
 }

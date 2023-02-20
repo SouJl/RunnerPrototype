@@ -14,7 +14,6 @@ namespace Features.Decription
         void Clear();
 
         void Show(string id);
-        void Hide(string id);
     }
 
     internal class DescriptionView : MonoBehaviour, IDesctiprionView
@@ -38,10 +37,6 @@ namespace Features.Decription
 
         private void OnDestroy() => Clear();
 
-        public void Hide(string id)
-        {
-            SetDecriptionInfo(DefaultIcon, "", "");
-        }
 
         public void Show(string id)
         {

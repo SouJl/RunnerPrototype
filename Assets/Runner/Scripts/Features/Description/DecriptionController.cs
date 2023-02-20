@@ -11,7 +11,6 @@ namespace Features.Decription
     internal interface IDescriptionController 
     {
         void Show(string id);
-        void Hide(string id);
     }
 
     internal class DecriptionController : BaseController, IDescriptionController
@@ -43,8 +42,5 @@ namespace Features.Decription
 
         public void Show(string id) =>
             _view.Show(id);
-
-        public void Hide(string id) =>
-            _view.Hide(id);
     }
 }
