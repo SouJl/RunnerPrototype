@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Runner.Scripts.Interfaces
+namespace Runner.Interfaces
 {
     internal interface IAbilityActivator
     {

@@ -1,4 +1,4 @@
-﻿namespace Runner.Scripts
+﻿namespace Runner
 {
     internal abstract class BaseContext :BaseLifeCycleObject
     {

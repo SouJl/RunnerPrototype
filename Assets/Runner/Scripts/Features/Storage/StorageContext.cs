@@ -1,8 +1,8 @@
 ﻿using Features.Inventory;
 using Features.Storage.Upgrade;
-using Runner.Scripts;
-using Runner.Scripts.Profile;
-using Runner.Scripts.Tool;
+using Runner;
+using Runner.Profile;
+using Runner.Tool;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;

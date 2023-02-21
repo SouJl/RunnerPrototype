@@ -1,9 +1,9 @@
-﻿using Runner.Scripts.Tool;
-using Runner.Scripts.Enums;
-using Runner.Scripts.Game;
+﻿using Runner.Tool;
+using Runner.Enums;
+using Runner.Game;
 using Features.Inventory;
 
-namespace Runner.Scripts.Profile
+namespace Runner.Profile
 {
     internal class ProfilePlayer
     {

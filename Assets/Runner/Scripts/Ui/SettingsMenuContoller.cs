@@ -1,10 +1,10 @@
-﻿using Runner.Scripts.Enums;
-using Runner.Scripts.Profile;
-using Runner.Scripts.Tool;
-using Runner.Scripts.View;
+﻿using Runner.Enums;
+using Runner.Profile;
+using Runner.Tool;
+using Runner.View;
 using UnityEngine;
 
-namespace Runner.Scripts.Ui
+namespace Runner.Ui
 {
     internal class SettingsMenuContoller : BaseController
     {

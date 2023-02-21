@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Runner.Scripts.Tool
+namespace Runner.Tool
 {
     public static class EnumExtension
     {

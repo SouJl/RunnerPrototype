@@ -1,7 +1,7 @@
 ﻿using Features.AbilitySystem.Abilities;
-using Runner.Scripts;
-using Runner.Scripts.Interfaces;
-using Runner.Scripts.Tool;
+using Runner;
+using Runner.Interfaces;
+using Runner.Tool;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;

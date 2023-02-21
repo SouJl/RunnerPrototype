@@ -1,12 +1,12 @@
 ﻿using Features.AbilitySystem;
-using Runner.Scripts.Interfaces;
-using Runner.Scripts.Profile;
-using Runner.Scripts.Tool;
+using Runner.Interfaces;
+using Runner.Profile;
+using Runner.Tool;
 using Runner.Services;
 using System;
 using UnityEngine;
 
-namespace Runner.Scripts.Game
+namespace Runner.Game
 {
     internal class GameController:BaseController
     {

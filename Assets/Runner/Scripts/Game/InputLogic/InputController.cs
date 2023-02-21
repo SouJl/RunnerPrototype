@@ -1,9 +1,9 @@
-using Runner.Scripts.Enums;
-using Runner.Scripts.Tool;
-using Runner.Scripts.View;
+using Runner.Enums;
+using Runner.Tool;
+using Runner.View;
 using UnityEngine;
 
-namespace Runner.Scripts.Game 
+namespace Runner.Game 
 {
     internal class InputController : BaseController
     {

@@ -1,8 +1,8 @@
-﻿using Runner.Scripts;
+﻿using Runner;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using System;
-using Runner.Scripts.Tool;
+using Runner.Tool;
 using Features.Inventory.Items;
 using Object = UnityEngine.Object;
 using Features.Decription;

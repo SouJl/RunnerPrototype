@@ -1,6 +1,6 @@
 ﻿using Features.Inventory.Items;
-using Runner.Scripts;
-using Runner.Scripts.Tool;
+using Runner;
+using Runner.Tool;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;

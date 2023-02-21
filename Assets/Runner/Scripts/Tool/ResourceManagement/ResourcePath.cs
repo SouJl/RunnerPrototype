@@ -1,4 +1,4 @@
-﻿namespace Runner.Scripts.Tool
+﻿namespace Runner.Tool
 {
     internal class ResourcePath
     {

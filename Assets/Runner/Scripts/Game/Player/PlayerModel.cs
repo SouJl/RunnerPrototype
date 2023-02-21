@@ -1,6 +1,6 @@
 using Features.Storage.Upgrade;
 
-namespace Runner.Scripts.Game 
+namespace Runner.Game 
 {
     internal class PlayerModel : IUpgradable
     {

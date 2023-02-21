@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Runner.Scripts.View
+namespace Runner.View
 {
     [RequireComponent(typeof(SpriteRenderer))]
     internal class BackgroundView : MonoBehaviour

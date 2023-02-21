@@ -1,4 +1,4 @@
-﻿using Runner.Scripts.Interfaces;
+﻿using Runner.Interfaces;
 
 namespace Features.AbilitySystem.Abilities
 {

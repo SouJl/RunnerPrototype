@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Runner.Scripts.Tool
+namespace Runner.Tool
 {
     internal static class ResourceLoader
     {

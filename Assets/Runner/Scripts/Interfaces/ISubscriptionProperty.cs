@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Runner.Scripts.Interfaces
+namespace Runner.Interfaces
 {
     internal interface ISubscriptionProperty<T>
     {

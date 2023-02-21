@@ -1,8 +1,8 @@
 ﻿using System;
 using  Runner.Services;
-using Runner.Scripts.Interfaces;
+using Runner.Interfaces;
 
-namespace Runner.Scripts.Tool
+namespace Runner.Tool
 {
     internal class BuyProductIAPProvider : BaseIAPProvider
     {

@@ -1,9 +1,9 @@
 ﻿using Features.Inventory;
 using Features.Storage.Upgrade;
 using JetBrains.Annotations;
-using Runner.Scripts;
-using Runner.Scripts.Enums;
-using Runner.Scripts.Profile;
+using Runner;
+using Runner.Enums;
+using Runner.Profile;
 using System;
 using System.Collections.Generic;
 

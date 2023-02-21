@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Runner.Scripts
+namespace Runner
 {
     internal abstract class BaseLifeCycleObject : IDisposable 
     {

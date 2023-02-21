@@ -1,7 +1,7 @@
 ﻿using JoostenProductions;
 using UnityEngine;
 
-namespace Runner.Scripts.View
+namespace Runner.View
 {
     internal class InputKeyboardView:BaseInputView
     {

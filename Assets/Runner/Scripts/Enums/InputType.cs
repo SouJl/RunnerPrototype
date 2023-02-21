@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Runner.Scripts.Enums
+namespace Runner.Enums
 {
     internal enum InputType
     {

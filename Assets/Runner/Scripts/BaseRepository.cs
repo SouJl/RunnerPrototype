@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Runner.Scripts
+namespace Runner
 {
     internal interface IRepository : IDisposable
     {

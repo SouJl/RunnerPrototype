@@ -1,10 +1,10 @@
-using Runner.Scripts.Enums;
-using Runner.Scripts.Profile;
-using Runner.Scripts.Tool;
+using Runner.Enums;
+using Runner.Profile;
+using Runner.Tool;
 using Runner.Services;
 using UnityEngine;
 
-namespace Runner.Scripts 
+namespace Runner 
 {
     public class EntryPoint : MonoBehaviour
     {

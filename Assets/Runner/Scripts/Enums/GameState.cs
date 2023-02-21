@@ -1,5 +1,5 @@
 
-namespace Runner.Scripts.Enums 
+namespace Runner.Enums 
 {
     internal enum GameState 
     {

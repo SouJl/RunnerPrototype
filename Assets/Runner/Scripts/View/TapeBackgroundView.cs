@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using Runner.Scripts.Interfaces;
+using Runner.Interfaces;
 
-namespace Runner.Scripts.View
+namespace Runner.View
 {
     internal class TapeBackgroundView:MonoBehaviour
     {

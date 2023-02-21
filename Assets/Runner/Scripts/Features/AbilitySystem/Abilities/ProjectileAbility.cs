@@ -1,4 +1,4 @@
-﻿using Runner.Scripts.Interfaces;
+﻿using Runner.Interfaces;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;

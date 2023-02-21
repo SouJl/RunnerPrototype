@@ -1,5 +1,5 @@
 ﻿using Features.AbilitySystem.Abilities;
-using Runner.Scripts;
+using Runner;
 using System.Collections.Generic;
 
 namespace Features.AbilitySystem

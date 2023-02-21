@@ -1,11 +1,11 @@
 ﻿using Features.Storage;
-using Runner.Scripts.Enums;
-using Runner.Scripts.Game;
-using Runner.Scripts.Profile;
-using Runner.Scripts.Ui;
+using Runner.Enums;
+using Runner.Game;
+using Runner.Profile;
+using Runner.Ui;
 using UnityEngine;
 
-namespace Runner.Scripts
+namespace Runner
 {
     internal class MainContoller : BaseController
     {

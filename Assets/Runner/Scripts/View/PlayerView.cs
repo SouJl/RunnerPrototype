@@ -1,8 +1,8 @@
-﻿using Runner.Scripts.Interfaces;
+﻿using Runner.Interfaces;
 using System.Collections;
 using UnityEngine;
 
-namespace Runner.Scripts.View
+namespace Runner.View
 {
     [RequireComponent(typeof(SpriteRenderer))]
     internal class PlayerView : MonoBehaviour, IPhysicsUnit

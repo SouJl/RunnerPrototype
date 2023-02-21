@@ -1,7 +1,7 @@
-﻿using Runner.Scripts.Interfaces;
+﻿using Runner.Interfaces;
 using System;
 
-namespace Runner.Scripts.Tool
+namespace Runner.Tool
 {
     internal class SubscriptionProperty<T> : ISubscriptionProperty<T>
     {

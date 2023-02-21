@@ -4,7 +4,7 @@ using Features.Storage.Upgrade;
 using System;
 using System.Linq;
 
-namespace Runner.Scripts.Tool
+namespace Runner.Tool
 {
     internal static class ContentDataSourceLoader
     {
