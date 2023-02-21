@@ -1,7 +1,7 @@
 ﻿using Runner.Interfaces;
 using System;
 
-namespace Runner.Tool
+namespace Runner.Services
 {
     internal abstract class BaseIAPProvider : IServiceListnerProvider
     {

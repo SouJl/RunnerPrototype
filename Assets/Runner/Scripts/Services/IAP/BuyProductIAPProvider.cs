@@ -1,8 +1,4 @@
-﻿using System;
-using  Runner.Services;
-using Runner.Interfaces;
-
-namespace Runner.Tool
+﻿namespace Runner.Services.IAP
 {
     internal class BuyProductIAPProvider : BaseIAPProvider
     {

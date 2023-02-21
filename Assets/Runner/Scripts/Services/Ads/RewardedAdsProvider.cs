@@ -1,6 +1,4 @@
-﻿using Runner.Services;
-
-namespace Runner.Tool
+﻿namespace Runner.Services.ADS
 {
     internal class RewardedAdsProvider : BaseAdsProvider
     {
