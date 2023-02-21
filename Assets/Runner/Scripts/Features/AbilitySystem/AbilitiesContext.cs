@@ -28,7 +28,7 @@ namespace Features.AbilitySystem
             CreateController(placeForUi, activator);
         }
 
-        private AbilitiesController CreateController(Transform placeForUi, IAbilityActivator activator)
+        private void CreateController(Transform placeForUi, IAbilityActivator activator)
         {
             AbilityItemConfig[] itemConfigs = LoadConfigs();
             AbilitiesRepository repository = CreateRepository(itemConfigs);
@@ -37,8 +37,6 @@ namespace Features.AbilitySystem
             var controller = new AbilitiesController(view, repository, activator, itemConfigs);
 
             AddController(controller);
-
-            return controller;
         }
 
         private AbilitiesView CreateView(Transform placeForUi)

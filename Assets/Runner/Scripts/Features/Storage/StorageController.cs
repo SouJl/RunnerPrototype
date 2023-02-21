@@ -22,9 +22,10 @@ namespace Features.Storage
 
         private readonly StorageView _view;
         private readonly ProfilePlayer _profilePlayer;
-        private readonly InventoryController _inventoryController;
+        private readonly InventoryContext _inventoryContext;
         private readonly UpgradeHandlersRepository _upgradeHandlersRepository;
-      
+
+
         public StorageController(
             [NotNull] Transform placeForUi,
             [NotNull] ProfilePlayer profilePlayer)
@@ -38,23 +39,24 @@ namespace Features.Storage
             _view = LoadView(placeForUi);
             _view.Init(Apply, Back);
 
+
             _upgradeHandlersRepository = CreateRepository();
-            _inventoryController = CreateInventoryController(_view.InventoryPlaceUi);
+            _inventoryContext = CreateInventoryContext(_view.InventoryPlaceUi, _profilePlayer.Inventory); 
         }
 
         private UpgradeHandlersRepository CreateRepository()
         {
             UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfigs(_dataSourcePath);
-            var repository = new UpgradeHandlersRepository(upgradeConfigs);
+            UpgradeHandlersRepository repository = new(upgradeConfigs);
             AddRepository(repository);
 
             return repository;
         }
 
-        private InventoryController CreateInventoryController(Transform placeForUi)
+        private InventoryContext CreateInventoryContext(Transform placeForUi, IInventoryModel inventoryModel)
         {
-            var inventoryController = new InventoryController(placeForUi, _profilePlayer.Inventory);
-            AddController(inventoryController);
+            InventoryContext inventoryController = new(placeForUi, inventoryModel);
+            AddContext(inventoryController);
 
             return inventoryController;
         }
