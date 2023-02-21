@@ -102,9 +102,6 @@ namespace Features.Storage
              Log($"Apply. Current Player stats: " +
                $"\n Speed - > {upgradableUnit.Speed}; " +
                $"JumpHight - > {upgradableUnit.JumpHeight};" +
-               $"Helh - > {upgradableUnit.Health}");
-
-        private void Log(string message) =>
-            Debug.Log($"[{GetType().Name}] {message}");
+               $"Helth - > {upgradableUnit.Health}");
     }
 }

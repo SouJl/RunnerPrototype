@@ -15,7 +15,7 @@ namespace Runner.Scripts.Game
 
         private readonly PlayerController _playerController;
         private readonly InputController _inputController;
-        private readonly AbilitiesController _abilitiesController;
+        private readonly AbilitiesContext _abilitiesContextController;
         private readonly TapeBackGroundgontroller _tapeBackgroundController;
 
         public GameController(Transform placeForUi, ProfilePlayer profilePlayer) 
@@ -26,7 +26,7 @@ namespace Runner.Scripts.Game
 
             _playerController = CreatePlayerController(profilePlayer);
             _inputController = CreateInputController(profilePlayer, _leftMoveDiff, _rightMoveDiff);
-            _abilitiesController = CreateAbilitiesController(placeForUi, _playerController);
+            _abilitiesContextController = CreateAbilitiesContext(placeForUi, _playerController);
             _tapeBackgroundController = CreateTapeBackground(_leftMoveDiff, _rightMoveDiff); 
 
             ServicesHandler.Analytics.SendGameStarted(profilePlayer.InputType.GetDescription());
@@ -53,12 +53,12 @@ namespace Runner.Scripts.Game
 
             return inputController;
         }
-        private AbilitiesController CreateAbilitiesController(Transform placeForUi, IAbilityActivator abilityActivator)
+        private AbilitiesContext CreateAbilitiesContext(Transform placeForUi, IAbilityActivator abilityActivator)
         {
-            var abilitiesController = new AbilitiesController(placeForUi, abilityActivator);
-            AddController(abilitiesController);
+            var abilitiesContextController = new AbilitiesContext(placeForUi, abilityActivator);
+            AddContext(abilitiesContextController);
 
-            return abilitiesController;
+            return abilitiesContextController;
         }
 
         private TapeBackGroundgontroller CreateTapeBackground(SubscriptionProperty<float> leftMoveDiff, SubscriptionProperty<float> rightMoveDiff)
@@ -68,5 +68,6 @@ namespace Runner.Scripts.Game
 
             return tapeBackgroundController;
         }      
+     
     }
 }

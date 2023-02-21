@@ -74,7 +74,6 @@ namespace Runner.Scripts
             _settingsMenuContoller?.Dispose();
             _storageController?.Dispose();
             _gameController?.Dispose();
-
         }
 
     }
