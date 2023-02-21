@@ -4,10 +4,8 @@ using JetBrains.Annotations;
 using Runner.Scripts;
 using Runner.Scripts.Enums;
 using Runner.Scripts.Profile;
-using Runner.Scripts.Tool;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Features.Storage
 {
@@ -17,57 +15,30 @@ namespace Features.Storage
 
     internal class StorageController : BaseController, IStorageController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/StorageView");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Upgrades/UpgradeItemsDataConfig");
+       
 
-        private readonly StorageView _view;
+        private readonly IStorageView _view;
         private readonly ProfilePlayer _profilePlayer;
-        private readonly InventoryContext _inventoryContext;
-        private readonly UpgradeHandlersRepository _upgradeHandlersRepository;
+        private readonly IUpgradeHandlersRepository _upgradeHandlersRepository;
+        private readonly BaseContext _inventoryContext;
 
 
         public StorageController(
-            [NotNull] Transform placeForUi,
-            [NotNull] ProfilePlayer profilePlayer)
+            [NotNull] IStorageView view,
+            [NotNull] ProfilePlayer profilePlayer,
+            [NotNull] IUpgradeHandlersRepository upgradeHandlersRepository,
+            [NotNull] BaseContext inventoryContext)
         {
-            if (!placeForUi)
-                throw new ArgumentNullException(nameof(placeForUi));
-
+            _view 
+                = view ?? throw new ArgumentNullException(nameof(view));
             _profilePlayer 
                 = profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
-
-            _view = LoadView(placeForUi);
-            _view.Init(Apply, Back);
-
-
-            _upgradeHandlersRepository = CreateRepository();
-            _inventoryContext = CreateInventoryContext(_view.InventoryPlaceUi, _profilePlayer.Inventory); 
-        }
-
-        private UpgradeHandlersRepository CreateRepository()
-        {
-            UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfigs(_dataSourcePath);
-            UpgradeHandlersRepository repository = new(upgradeConfigs);
-            AddRepository(repository);
-
-            return repository;
-        }
-
-        private InventoryContext CreateInventoryContext(Transform placeForUi, IInventoryModel inventoryModel)
-        {
-            InventoryContext inventoryController = new(placeForUi, inventoryModel);
-            AddContext(inventoryController);
-
-            return inventoryController;
-        }
-
-        private StorageView LoadView(Transform placeForUi)
-        {
-            GameObject prefab = ResourceLoader.LoadPrefab(_viewPath);
-            GameObject objectView = UnityEngine.Object.Instantiate(prefab, placeForUi, false);
-            AddGameObject(objectView);
-
-            return objectView.GetComponent<StorageView>();
+            _upgradeHandlersRepository 
+                = upgradeHandlersRepository ?? throw new ArgumentNullException(nameof(upgradeHandlersRepository));
+            _inventoryContext 
+                = inventoryContext ?? throw new ArgumentNullException(nameof(inventoryContext));
+            
+            _view.Init(Apply, Back); 
         }
 
         private void Apply()

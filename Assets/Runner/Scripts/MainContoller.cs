@@ -14,8 +14,8 @@ namespace Runner.Scripts
 
         private MainMenuController _mainMenuController;
         private SettingsMenuContoller _settingsMenuContoller;
-        private StorageController _storageController;
         private GameController _gameController;
+        private StorageContext _storageContext;
 
         public MainContoller(Transform placeForUi, ProfilePlayer profilePlayer) 
         {
@@ -51,7 +51,7 @@ namespace Runner.Scripts
                     }
                 case GameState.Storage: 
                     {
-                        _storageController = new StorageController(_placeForUi, _profilePlayer);
+                        _storageContext = new StorageContext(_placeForUi, _profilePlayer);
                         break;
                     }
                 case GameState.Game: 
@@ -72,8 +72,8 @@ namespace Runner.Scripts
         {
             _mainMenuController?.Dispose();
             _settingsMenuContoller?.Dispose();
-            _storageController?.Dispose();
             _gameController?.Dispose();
+            _storageContext?.Dispose();
         }
 
     }
