@@ -1,5 +1,4 @@
-﻿using Runner;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using System;
 using Runner.Tool;
@@ -10,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Runner.Features.Inventory
 {
-    internal class InventoryContext : BaseContext
+    internal class InventoryContext : BaseContext<ItemConfig, ItemsRepository, InventoryView>
     {
         private readonly ResourcePath _dataSourcePath = new("Configs/Items/ItemsDataConfig");
         private readonly ResourcePath _viewPath = new("Prefabs/InventoryView");
@@ -30,8 +29,8 @@ namespace Runner.Features.Inventory
         private void CreateController(Transform placeForUi, IInventoryModel inventoryModel)
         {
             ItemConfig[] itemsConfigs = LoadConfigs();
-            InventoryView view = CreateView(placeForUi);
             ItemsRepository repository = CreateRepository(itemsConfigs);
+            InventoryView view = CreateView(placeForUi);
             IDescriptionController descriptionController = CreateDescription(view.PlaceForDescription, repository.Items.Values);
 
             var controller = new InventoryController(inventoryModel, view, repository, descriptionController);
@@ -39,10 +38,11 @@ namespace Runner.Features.Inventory
             AddController(controller);
         }
 
-        private ItemConfig[] LoadConfigs() =>
-           ContentDataSourceLoader.LoadItemConfig(_dataSourcePath);
 
-        private InventoryView CreateView(Transform placeForUi)
+        protected override ItemConfig[] LoadConfigs() =>
+              ContentDataSourceLoader.LoadItemConfig(_dataSourcePath);
+
+        protected override InventoryView CreateView(Transform placeForUi)
         {
             GameObject prefab = ResourceLoader.LoadPrefab(_viewPath);
             GameObject objectView = Object.Instantiate(prefab, placeForUi);
@@ -51,9 +51,9 @@ namespace Runner.Features.Inventory
             return objectView.GetComponent<InventoryView>();
         }
 
-        private ItemsRepository CreateRepository(ItemConfig[] itemConfigs)
+        protected override ItemsRepository CreateRepository(ItemConfig[] configsData)
         {
-            var repository = new ItemsRepository(itemConfigs);
+            var repository = new ItemsRepository(configsData);
             AddRepository(repository);
 
             return repository;

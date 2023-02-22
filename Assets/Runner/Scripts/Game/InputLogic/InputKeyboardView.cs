@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Runner.Game
 {
-    internal class InputKeyboardView:BaseInputView
+    internal class InputKeyboardView : BaseInputView
     {
         [Header("Keyboard Input Settings")]
         [SerializeField] private float _inputMultiplier = 0.01f;

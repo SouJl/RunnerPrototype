@@ -5,19 +5,18 @@ using Runner.Tool;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-
 using Object = UnityEngine.Object;
 
 namespace Runner.Features.AbilitySystem
 {
-    internal class AbilitiesContext: BaseContext
+    internal class AbilitiesContext : BaseContext<AbilityItemConfig, AbilitiesRepository, AbilitiesView>
     {
         private readonly ResourcePath _dataSourcePath = new("Configs/Ability/AbilityItemsDataConfig");
         private readonly ResourcePath _viewPath = new("Prefabs/AbilitiesView");
 
         public AbilitiesContext(
-            [NotNull] Transform placeForUi, 
-            [NotNull] IAbilityActivator activator) 
+            [NotNull] Transform placeForUi,
+            [NotNull] IAbilityActivator activator)
         {
             if (placeForUi == null)
                 throw new ArgumentNullException(nameof(placeForUi));
@@ -39,24 +38,25 @@ namespace Runner.Features.AbilitySystem
             AddController(controller);
         }
 
-        private AbilitiesView CreateView(Transform placeForUi)
+        protected override AbilityItemConfig[] LoadConfigs() =>
+            ContentDataSourceLoader.LoadAbilityItemConfigs(_dataSourcePath);
+
+
+        protected override AbilitiesRepository CreateRepository(AbilityItemConfig[] configsData)
+        {
+            var repository = new AbilitiesRepository(configsData);
+            AddRepository(repository);
+
+            return repository;
+        }
+
+        protected override AbilitiesView CreateView(Transform placeForUi)
         {
             GameObject prefab = ResourceLoader.LoadPrefab(_viewPath);
             GameObject objectView = Object.Instantiate(prefab, placeForUi, false);
             AddGameObject(objectView);
 
             return objectView.GetComponent<AbilitiesView>();
-        }
-
-        private AbilityItemConfig[] LoadConfigs() =>
-            ContentDataSourceLoader.LoadAbilityItemConfigs(_dataSourcePath);
-
-        private AbilitiesRepository CreateRepository(AbilityItemConfig[] abilityItemConfigs)
-        {
-            var repository = new AbilitiesRepository(abilityItemConfigs);
-            AddRepository(repository);
-
-            return repository;
-        }
+        }   
     }
 }

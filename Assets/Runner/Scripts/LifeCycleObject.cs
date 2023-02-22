@@ -54,7 +54,7 @@ namespace Runner
         protected void AddRepository(IRepository repository) =>
             AddDisposableObject(repository);
 
-        protected void AddContext(BaseContext context) =>
+        protected void AddContext(IContext context) =>
             AddDisposableObject(context);
 
         protected void AddGameObject(GameObject gameObject)

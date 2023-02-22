@@ -18,14 +18,14 @@ namespace Runner.Features.Storage
         private readonly IStorageView _view;
         private readonly ProfilePlayer _profilePlayer;
         private readonly IUpgradeHandlersRepository _upgradeHandlersRepository;
-        private readonly BaseContext _inventoryContext;
+        private readonly IContext _inventoryContext;
 
 
         public StorageController(
             [NotNull] IStorageView view,
             [NotNull] ProfilePlayer profilePlayer,
             [NotNull] IUpgradeHandlersRepository upgradeHandlersRepository,
-            [NotNull] BaseContext inventoryContext)
+            [NotNull] IContext inventoryContext)
         {
             _view 
                 = view ?? throw new ArgumentNullException(nameof(view));

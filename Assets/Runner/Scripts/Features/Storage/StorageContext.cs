@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 
 namespace Runner.Features.Storage
 {
-    internal class StorageContext : BaseContext
+    internal class StorageContext : BaseContext<UpgradeItemConfig, UpgradeHandlersRepository, StorageView>
     {
 
         private readonly ResourcePath _dataSourcePath = new("Configs/Upgrades/UpgradeItemsDataConfig");
@@ -40,19 +40,19 @@ namespace Runner.Features.Storage
             AddController(controller);
         }
 
-        private UpgradeItemConfig[] LoadConfigs() =>
+        protected override UpgradeItemConfig[] LoadConfigs() =>
             ContentDataSourceLoader.LoadUpgradeItemConfigs(_dataSourcePath);
 
-        private UpgradeHandlersRepository CreateRepository(UpgradeItemConfig[] upgradeItemConfigs)
+
+        protected override UpgradeHandlersRepository CreateRepository(UpgradeItemConfig[] configsData)
         {
-            UpgradeHandlersRepository repository = new(upgradeItemConfigs);
+            UpgradeHandlersRepository repository = new(configsData);
             AddRepository(repository);
 
             return repository;
         }
 
-
-        private StorageView CreateView(Transform placeForUi)
+        protected override StorageView CreateView(Transform placeForUi)
         {
             GameObject prefab = ResourceLoader.LoadPrefab(_viewPath);
             GameObject objectView = Object.Instantiate(prefab, placeForUi);
@@ -68,5 +68,6 @@ namespace Runner.Features.Storage
 
             return context;
         }
+
     }
 }

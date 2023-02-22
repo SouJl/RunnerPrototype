@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Runner.Game
 {
-    internal class BaseInputView:MonoBehaviour
+    internal class BaseInputView : MonoBehaviour
     {
         protected float speed;
         private SubscriptionProperty<float> _leftMove;
@@ -11,8 +11,8 @@ namespace Runner.Game
 
 
         public void Init(
-            SubscriptionProperty<float> leftMove, 
-            SubscriptionProperty<float> rightMove, 
+            SubscriptionProperty<float> leftMove,
+            SubscriptionProperty<float> rightMove,
             float speed)
         {
             _leftMove = leftMove;
@@ -21,6 +21,6 @@ namespace Runner.Game
         }
 
         protected void OnLeftMove(float value) => _leftMove.Value = value;
-        protected void OnRightMove(float value)=> _rightMove.Value = value;
+        protected void OnRightMove(float value) => _rightMove.Value = value;
     }
 }
