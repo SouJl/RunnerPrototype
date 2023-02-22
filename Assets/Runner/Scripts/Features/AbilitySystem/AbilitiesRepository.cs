@@ -1,5 +1,4 @@
 ﻿using Runner.Features.AbilitySystem.Abilities;
-using Runner;
 using System.Collections.Generic;
 
 namespace Runner.Features.AbilitySystem

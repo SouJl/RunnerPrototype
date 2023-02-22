@@ -3,7 +3,6 @@ using Runner.Interfaces;
 using Runner.Profile;
 using Runner.Tool;
 using Runner.Services;
-using System;
 using UnityEngine;
 
 namespace Runner.Game
