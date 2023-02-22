@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Features.Storage
+namespace Runner.Features.Storage
 {
     internal interface IStorageView
     {

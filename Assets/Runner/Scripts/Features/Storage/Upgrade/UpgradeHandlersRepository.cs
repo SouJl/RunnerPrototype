@@ -1,7 +1,7 @@
 ﻿using Runner;
 using System.Collections.Generic;
 
-namespace Features.Storage.Upgrade
+namespace Runner.Features.Storage.Upgrade
 {
     internal interface IUpgradeHandlersRepository : IRepository
     {

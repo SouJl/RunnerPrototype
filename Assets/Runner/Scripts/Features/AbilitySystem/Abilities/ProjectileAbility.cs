@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Features.AbilitySystem.Abilities
+namespace Runner.Features.AbilitySystem.Abilities
 {
     internal class ProjectileAbility : IAbility
     {

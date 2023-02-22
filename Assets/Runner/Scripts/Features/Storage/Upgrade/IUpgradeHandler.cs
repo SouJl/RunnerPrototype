@@ -1,5 +1,5 @@
 ﻿
-namespace Features.Storage.Upgrade
+namespace Runner.Features.Storage.Upgrade
 {
     internal interface IUpgradeHandler
     {

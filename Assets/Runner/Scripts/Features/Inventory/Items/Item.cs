@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Features.Inventory.Items
+namespace Runner.Features.Inventory.Items
 {
     internal interface IItem
     {

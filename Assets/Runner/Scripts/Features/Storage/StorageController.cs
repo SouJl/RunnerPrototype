@@ -1,11 +1,11 @@
-﻿using Features.Storage.Upgrade;
+﻿using Runner.Features.Storage.Upgrade;
 using JetBrains.Annotations;
 using Runner;
 using Runner.Profile;
 using System;
 using System.Collections.Generic;
 
-namespace Features.Storage
+namespace Runner.Features.Storage
 {
     internal interface IStorageController
     {

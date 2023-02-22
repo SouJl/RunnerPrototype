@@ -3,12 +3,12 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using System;
 using Runner.Tool;
-using Features.Inventory.Items;
+using Runner.Features.Inventory.Items;
 using Object = UnityEngine.Object;
-using Features.Decription;
+using Runner.Features.Decription;
 using System.Collections.Generic;
 
-namespace Features.Inventory
+namespace Runner.Features.Inventory
 {
     internal class InventoryContext : BaseContext
     {

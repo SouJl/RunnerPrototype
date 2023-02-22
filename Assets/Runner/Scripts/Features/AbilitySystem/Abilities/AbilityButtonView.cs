@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-namespace Features.AbilitySystem.Abilities
+namespace Runner.Features.AbilitySystem.Abilities
 {
     internal interface IAbilityButtonView
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Features.Inventory
+namespace Runner.Features.Inventory
 {
     internal interface IInventoryModel
     {

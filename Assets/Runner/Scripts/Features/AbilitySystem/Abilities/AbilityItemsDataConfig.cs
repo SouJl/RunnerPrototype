@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace Features.AbilitySystem.Abilities
+namespace Runner.Features.AbilitySystem.Abilities
 {
     [CreateAssetMenu(
        fileName = nameof(AbilityItemsDataConfig),

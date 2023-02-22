@@ -1,10 +1,10 @@
-﻿using Features.Inventory.Items;
+﻿using Runner.Features.Inventory.Items;
 using Runner;
 using System;
 using JetBrains.Annotations;
-using Features.Decription;
+using Runner.Features.Decription;
 
-namespace Features.Inventory
+namespace Runner.Features.Inventory
 {
     internal interface IInventoryController
     {

@@ -1,7 +1,7 @@
-﻿using Features.Inventory.Items;
+﻿using Runner.Features.Inventory.Items;
 using UnityEngine;
 
-namespace Features.AbilitySystem.Abilities
+namespace Runner.Features.AbilitySystem.Abilities
 {
 
     internal interface IAbilityItem

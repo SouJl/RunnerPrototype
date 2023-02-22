@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace Features.Inventory.Items
+namespace Runner.Features.Inventory.Items
 {
     internal interface IItemsRepository : IRepository
     {

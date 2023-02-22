@@ -1,5 +1,5 @@
-﻿using Features.Inventory;
-using Features.Storage.Upgrade;
+﻿using Runner.Features.Inventory;
+using Runner.Features.Storage.Upgrade;
 using Runner;
 using Runner.Profile;
 using Runner.Tool;
@@ -8,7 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Features.Storage
+namespace Runner.Features.Storage
 {
     internal class StorageContext : BaseContext
     {

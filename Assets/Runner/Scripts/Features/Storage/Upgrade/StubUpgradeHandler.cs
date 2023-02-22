@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Features.Storage.Upgrade
+namespace Runner.Features.Storage.Upgrade
 {
     internal class StubUpgradeHandler : IUpgradeHandler
     {

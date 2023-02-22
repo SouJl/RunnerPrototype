@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace Features.Inventory.Items
+namespace Runner.Features.Inventory.Items
 {
     [CreateAssetMenu(fileName = nameof(ItemsDataConfig), menuName = "Configs/" + nameof(ItemsDataConfig))]
     internal sealed class ItemsDataConfig : ScriptableObject

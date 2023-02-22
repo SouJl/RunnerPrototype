@@ -1,8 +1,8 @@
-﻿using Features.AbilitySystem.Abilities;
+﻿using Runner.Features.AbilitySystem.Abilities;
 using Runner;
 using System.Collections.Generic;
 
-namespace Features.AbilitySystem
+namespace Runner.Features.AbilitySystem
 {
     internal interface IAbilitiesRepository : IRepository
     {

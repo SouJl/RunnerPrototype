@@ -1,11 +1,11 @@
-﻿using Features.Inventory.Items;
+﻿using Runner.Features.Inventory.Items;
 using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Features.Decription
+namespace Runner.Features.Decription
 {
     internal interface IDesctiprionView
     {

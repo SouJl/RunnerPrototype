@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-namespace Features.Inventory.Items
+namespace Runner.Features.Inventory.Items
 {
     internal interface IItemView
     {

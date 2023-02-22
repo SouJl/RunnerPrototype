@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace Features.AbilitySystem.Abilities
+namespace Runner.Features.AbilitySystem.Abilities
 {
     internal class JumpAbility : IAbility
     {

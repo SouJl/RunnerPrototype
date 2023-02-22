@@ -1,6 +1,6 @@
 ﻿using Runner.Tool;
 using Runner.Game;
-using Features.Inventory;
+using Runner.Features.Inventory;
 
 namespace Runner.Profile
 {

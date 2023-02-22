@@ -1,4 +1,4 @@
-﻿using Features.Inventory.Items;
+﻿using Runner.Features.Inventory.Items;
 using Runner;
 using Runner.Tool;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace Features.Decription
+namespace Runner.Features.Decription
 {
     internal interface IDescriptionController 
     {

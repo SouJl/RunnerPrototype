@@ -1,4 +1,4 @@
-﻿namespace Features.AbilitySystem.Abilities
+﻿namespace Runner.Features.AbilitySystem.Abilities
 {
     internal enum AbilityType
     {

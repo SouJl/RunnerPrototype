@@ -1,9 +1,9 @@
-﻿using Features.AbilitySystem.Abilities;
+﻿using Runner.Features.AbilitySystem.Abilities;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Features.AbilitySystem
+namespace Runner.Features.AbilitySystem
 {
     internal interface IAbilitiesView
     {

@@ -1,6 +1,6 @@
 ﻿using Runner.Interfaces;
 
-namespace Features.AbilitySystem.Abilities
+namespace Runner.Features.AbilitySystem.Abilities
 {
     internal class StubAbility : IAbility
     {

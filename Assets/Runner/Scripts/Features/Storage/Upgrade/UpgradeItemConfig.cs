@@ -1,7 +1,7 @@
-﻿using Features.Inventory.Items;
+﻿using Runner.Features.Inventory.Items;
 using UnityEngine;
 
-namespace Features.Storage.Upgrade
+namespace Runner.Features.Storage.Upgrade
 {
     [CreateAssetMenu(fileName = nameof(UpgradeItemConfig), menuName = "Configs/" + nameof(UpgradeItemConfig))]
     internal class UpgradeItemConfig : ScriptableObject

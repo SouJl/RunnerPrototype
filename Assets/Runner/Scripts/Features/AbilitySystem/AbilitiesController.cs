@@ -1,4 +1,4 @@
-﻿using Features.AbilitySystem.Abilities;
+﻿using Runner.Features.AbilitySystem.Abilities;
 using Runner;
 using Runner.Interfaces;
 using Runner.Tool;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace Features.AbilitySystem
+namespace Runner.Features.AbilitySystem
 {
     internal interface IAbilitiesController { }
 
