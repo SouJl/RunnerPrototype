@@ -1,7 +1,7 @@
 ﻿using Features.Storage;
 using Runner.Game;
 using Runner.Profile;
-using Runner.Ui;
+using Runner.UI;
 using UnityEngine;
 
 namespace Runner

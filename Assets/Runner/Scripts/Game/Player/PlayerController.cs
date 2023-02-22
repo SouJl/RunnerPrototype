@@ -1,6 +1,5 @@
 ﻿using Runner.Interfaces;
 using Runner.Tool;
-using Runner.View;
 using UnityEngine;
 
 namespace Runner.Game

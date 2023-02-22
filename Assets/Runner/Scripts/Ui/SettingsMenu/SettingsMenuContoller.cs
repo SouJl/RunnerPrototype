@@ -1,9 +1,8 @@
 ﻿using Runner.Profile;
 using Runner.Tool;
-using Runner.View;
 using UnityEngine;
 
-namespace Runner.Ui
+namespace Runner.UI
 {
     internal class SettingsMenuContoller : BaseController
     {

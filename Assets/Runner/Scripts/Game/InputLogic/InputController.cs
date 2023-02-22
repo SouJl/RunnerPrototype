@@ -1,6 +1,5 @@
 using Runner.Profile;
 using Runner.Tool;
-using Runner.View;
 using UnityEngine;
 
 namespace Runner.Game 
@@ -14,7 +13,8 @@ namespace Runner.Game
         public InputController(
             SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove, 
-            PlayerModel player, InputType inputType) 
+            PlayerModel player, 
+            InputType inputType) 
         {
             _viewPath = new ResourcePath($"Prefabs/{inputType.GetDescription()}");
 

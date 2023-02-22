@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Runner.View
+namespace Runner.UI
 {
     internal class MainMenuView : MonoBehaviour
     {

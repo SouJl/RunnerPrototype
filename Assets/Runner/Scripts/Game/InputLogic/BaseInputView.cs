@@ -1,7 +1,7 @@
 ﻿using Runner.Tool;
 using UnityEngine;
 
-namespace Runner.View
+namespace Runner.Game
 {
     internal class BaseInputView:MonoBehaviour
     {
