@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Runner
 {
-    internal abstract class BaseLifeCycleObject : IDisposable 
+    internal abstract class LifeCycleObject : IDisposable 
     {
         private List<IDisposable> _disposableObjects;
         private List<GameObject> _gameObjects;

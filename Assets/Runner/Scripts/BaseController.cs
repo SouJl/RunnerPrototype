@@ -1,6 +1,6 @@
 ﻿namespace Runner
 {
-    internal abstract class BaseController : BaseLifeCycleObject
+    internal abstract class BaseController : LifeCycleObject
     {
 
     }

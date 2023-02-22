@@ -1,4 +1,3 @@
-using Runner.Enums;
 using Runner.Profile;
 using Runner.Services;
 using Runner.Services.ADS;
@@ -8,13 +7,8 @@ namespace Runner
 {
     public class EntryPoint : MonoBehaviour
     {
-        [SerializeField] private InputType _inputType;
-        [SerializeField] private float _playerSpeed;
-        [SerializeField] private float _playerJumpHeight;
-        [SerializeField] private float _playerHealth;
+        [SerializeField] private InitialProfileData _initialData;
         [SerializeField] private Transform _placeForUi;
-
-        private const GameState InitialState = GameState.Start;
         
         private MainContoller _mainContoller;
 
@@ -22,7 +16,7 @@ namespace Runner
 
         void Start()
         {
-            var profilePlayer = new ProfilePlayer(_inputType, _playerSpeed, _playerJumpHeight, _playerHealth, InitialState);
+            var profilePlayer = new ProfilePlayer(_initialData);
             _mainContoller = new MainContoller(_placeForUi, profilePlayer);
 
             _interstitialProvider = new InterstitialAdsProvider();

@@ -1,5 +1,4 @@
-﻿using Runner.Enums;
-using Runner.Profile;
+﻿using Runner.Profile;
 using Runner.Tool;
 using Runner.View;
 using UnityEngine;

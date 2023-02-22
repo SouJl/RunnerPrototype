@@ -1,4 +1,5 @@
 using Features.Storage.Upgrade;
+using Runner.Profile;
 
 namespace Runner.Game 
 {
@@ -12,16 +13,16 @@ namespace Runner.Game
         public float JumpHeight { get; set; }
 
         public float Health { get; set; }
-        public PlayerModel(float speed, float jumpHeight, float health)
+        public PlayerModel(IPlayerData playerData)
         {
-            _defaultSpeed = speed;
-            Speed = speed;
+            _defaultSpeed = playerData.Speed;
+            Speed = playerData.Speed;
 
-            _defaultJumpHeight = jumpHeight;
-            JumpHeight = jumpHeight;
+            _defaultJumpHeight = playerData.JumpHeight;
+            JumpHeight = playerData.JumpHeight;
 
-            _defaultHealth = health;
-            Health = health;
+            _defaultHealth = playerData.HealtPoints;
+            Health = playerData.HealtPoints;
         }
  
         public void Restore()

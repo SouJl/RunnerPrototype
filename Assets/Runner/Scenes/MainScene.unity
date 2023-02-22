@@ -701,8 +701,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ebf475fbf688244a4ae582c53fca6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputType: 0
-  _playerSpeed: 5
-  _playerJumpHeight: 5
-  _playerHealth: 100
+  _initialData: {fileID: 11400000, guid: ca1c57577135e6745bf175c301c76dd1, type: 2}
   _placeForUi: {fileID: 912486459}

@@ -1,5 +1,4 @@
 ﻿using Features.Storage;
-using Runner.Enums;
 using Runner.Game;
 using Runner.Profile;
 using Runner.Ui;
