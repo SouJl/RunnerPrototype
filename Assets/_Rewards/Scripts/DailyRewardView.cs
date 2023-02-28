@@ -29,7 +29,7 @@ namespace Rewards
         [field: SerializeField] public TMP_Text TimerNewReward { get; private set; }
         [field: SerializeField] public Transform MountRootSlotsReward { get; private set; }
         [field: SerializeField] public ContainerSlotRewardView ContainerSlotRewardPrefab { get; private set; }
-        [field: SerializeField] public Button GetRewardButton { get; private set; }
+        [field: SerializeField] public Button ClaimRewardButton { get; private set; }
         [field: SerializeField] public Button ResetButton { get; private set; }
 
 

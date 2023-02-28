@@ -107,13 +107,13 @@ namespace Rewards
 
         private void SubscribeButtons()
         {
-            _rewardView.GetRewardButton.onClick.AddListener(ClaimReward);
+            _rewardView.ClaimRewardButton.onClick.AddListener(ClaimReward);
             _rewardView.ResetButton.onClick.AddListener(ResetRewardsState);
         }
 
         private void UnsubscribeButtons()
         {
-            _rewardView.GetRewardButton.onClick.RemoveListener(ClaimReward);
+            _rewardView.ClaimRewardButton.onClick.RemoveListener(ClaimReward);
             _rewardView.ResetButton.onClick.RemoveListener(ResetRewardsState);
         }
 
@@ -174,7 +174,7 @@ namespace Rewards
 
         private void RefreshUi()
         {
-            _rewardView.GetRewardButton.interactable = _isGetReward;
+            _rewardView.ClaimRewardButton.interactable = _isGetReward;
             _rewardView.TimerNewReward.text = GetTimerNewRewardText();
             RefreshSlots();
         }

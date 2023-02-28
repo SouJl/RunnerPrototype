@@ -31,7 +31,7 @@ namespace Rewards
         private void Start()
         {
             _schemeCurrency.SetData(Scheme);
-            _schemeCurrency.SetData(Diamond);
+            _diamondCurrency.SetData(Diamond);
         }
 
         public void AddScheme(int value)
@@ -43,7 +43,7 @@ namespace Rewards
         public void AddDiamond(int value)
         {
             Diamond += value;
-            _schemeCurrency.SetData(Diamond);
+            _diamondCurrency.SetData(Diamond);
         }  
     }
 }
