@@ -6,18 +6,18 @@ using Object = UnityEngine.Object;
 
 namespace Rewards
 {
-    internal class DailyRewardController
+    internal class RewardController
     {
-        private readonly DailyRewardView _rewardView;
+        private readonly RewardView _rewardView;
         private readonly ICurrencyView _currencyView;
 
-        private List<ContainerSlotRewardView> _slots;
+        private List<RewardSlotContainerView> _slots;
         private Coroutine _coroutine;
 
         private bool _isGetReward;
         private bool _isInitialized;
 
-        public DailyRewardController(DailyRewardView rewardView, ICurrencyView currencyView) 
+        public RewardController(RewardView rewardView, ICurrencyView currencyView) 
         {
             _rewardView 
                 = rewardView ?? throw new ArgumentNullException(nameof(rewardView));
@@ -54,16 +54,16 @@ namespace Rewards
 
         private void InitSlots()
         {
-            _slots = new List<ContainerSlotRewardView>();
+            _slots = new List<RewardSlotContainerView>();
 
             for (int i = 0; i < _rewardView.Rewards.Count; i++)
             {
-                ContainerSlotRewardView instanceSlot = CreateSlotRewardView();
+                RewardSlotContainerView instanceSlot = CreateSlotRewardView();
                 _slots.Add(instanceSlot);
             }
         }
 
-        private ContainerSlotRewardView CreateSlotRewardView() =>
+        private RewardSlotContainerView CreateSlotRewardView() =>
             Object.Instantiate
             (
                 _rewardView.ContainerSlotRewardPrefab,
@@ -73,7 +73,7 @@ namespace Rewards
 
         private void DeinitSlots()
         {
-            foreach (ContainerSlotRewardView slot in _slots)
+            foreach (RewardSlotContainerView slot in _slots)
                 Object.Destroy(slot.gameObject);
 
             _slots.Clear();
@@ -204,10 +204,10 @@ namespace Rewards
             for (var i = 0; i < _slots.Count; i++)
             {
                 Reward reward = _rewardView.Rewards[i];
-                int countDay = i + 1;
+                int countCooldownTime = i + 1;
                 bool isSelected = i == _rewardView.CurrentSlotInActive;
 
-                _slots[i].SetData(reward, countDay, isSelected);
+                _slots[i].SetData(reward, countCooldownTime, isSelected);
             }
         }
     }

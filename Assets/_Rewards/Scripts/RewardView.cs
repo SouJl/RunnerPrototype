@@ -8,11 +8,13 @@ namespace Rewards
 {
     internal interface IRewardView 
     {
-
+        float TimeCooldown { get; }
+        float TimeDeadline { get; }
+        List<Reward> Rewards { get; }
     }
 
 
-    internal class DailyRewardView : MonoBehaviour
+    internal class RewardView : MonoBehaviour
     {
         private const string CurrentSlotInActiveKey = nameof(CurrentSlotInActiveKey);
         private const string TimeGetRewardKey = nameof(TimeGetRewardKey);
@@ -28,7 +30,7 @@ namespace Rewards
         [field: Header("Ui Elements")]
         [field: SerializeField] public TMP_Text TimerNewReward { get; private set; }
         [field: SerializeField] public Transform MountRootSlotsReward { get; private set; }
-        [field: SerializeField] public ContainerSlotRewardView ContainerSlotRewardPrefab { get; private set; }
+        [field: SerializeField] public RewardSlotContainerView ContainerSlotRewardPrefab { get; private set; }
         [field: SerializeField] public Button ClaimRewardButton { get; private set; }
         [field: SerializeField] public Button ResetButton { get; private set; }
 

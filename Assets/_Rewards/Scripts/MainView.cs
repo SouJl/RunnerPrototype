@@ -4,13 +4,13 @@ namespace Rewards
 {
     internal class MainView : MonoBehaviour
     {
-        [SerializeField] private DailyRewardView _dailyRewardView;
+        [SerializeField] private RewardView _dailyRewardView;
         [SerializeField] private CurrencyView _currencyView;
 
-        private DailyRewardController _dailyRewardController;
+        private RewardController _dailyRewardController;
 
         private void Awake() =>
-            _dailyRewardController = new DailyRewardController(_dailyRewardView, _currencyView);
+            _dailyRewardController = new RewardController(_dailyRewardView, _currencyView);
 
         private void Start() =>
             _dailyRewardController.Init();

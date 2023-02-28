@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 1268219966694579368}
   - component: {fileID: 2505096773179831573}
   m_Layer: 0
-  m_Name: RewardSlotContainer
+  m_Name: WeeklyRewardSlotContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,6 +556,7 @@ MonoBehaviour:
   _iconCurrency: {fileID: 434095409882019683}
   _textDays: {fileID: 7083281555736604028}
   _countReward: {fileID: 7610006893764295016}
+  _rewardPeriodType: 2
 --- !u!1 &7291627887622227708
 GameObject:
   m_ObjectHideFlags: 0
