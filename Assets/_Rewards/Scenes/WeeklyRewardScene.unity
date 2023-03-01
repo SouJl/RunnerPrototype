@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ce21ede7138cf459dffbda4d1e1d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rewardsDataConfig: {fileID: 11400000, guid: 9f387890064893d489c3f87903e9c71d, type: 2}
   _dailyRewardView: {fileID: 773340680}
   _currencyView: {fileID: 14289423}
 --- !u!4 &48457016
@@ -691,20 +692,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3c8667779c2e54b9b27d10fc10fcb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TimeCooldown>k__BackingField: 604800
-  <TimeDeadline>k__BackingField: 1209600
-  <Rewards>k__BackingField:
-  - <RewardType>k__BackingField: 0
-    <IconCurrency>k__BackingField: {fileID: -1694368845, guid: 8ec999ef4515287458bf6c24fae368ea, type: 3}
-    <CountCurrency>k__BackingField: 100
-  - <RewardType>k__BackingField: 1
-    <IconCurrency>k__BackingField: {fileID: -1779807831, guid: 8ec999ef4515287458bf6c24fae368ea, type: 3}
-    <CountCurrency>k__BackingField: 30
-  <TimerNewReward>k__BackingField: {fileID: 1893027797}
-  <MountRootSlotsReward>k__BackingField: {fileID: 1221106767}
-  <ContainerSlotRewardPrefab>k__BackingField: {fileID: 2505096773179831573, guid: e9629488614bfeb43acc7244608d24ef, type: 3}
-  <ClaimRewardButton>k__BackingField: {fileID: 1887018139}
-  <ResetButton>k__BackingField: {fileID: 1262082189}
+  CurrentSlotInActiveKey: CurrentSlotInActiveWeekKey
+  TimeGetRewardKey: TimeGetRewardWeekKey
+  _timerNewReward: {fileID: 1893027797}
+  _mountRootSlotsReward: {fileID: 1221106767}
+  _containerSlotRewardPrefab: {fileID: 5050215200017203725, guid: dbf3bbfb158b9c44fa00a47eb8d3e25b, type: 3}
+  _claimRewardButton: {fileID: 1887018139}
+  _resetButton: {fileID: 1262082189}
 --- !u!1 &852479038
 GameObject:
   m_ObjectHideFlags: 0
