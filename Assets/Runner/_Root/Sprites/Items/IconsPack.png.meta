@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -5269,9 +5281,9 @@ TextureImporter:
       IconsPack_20: 69640462
       IconsPack_81: -125967542
       IconsPack_112: 1714555740
-      IconsPack_127: 1658037670
-      IconsPack_17: 1050704758
       IconsPack_144: -2052422299
+      IconsPack_17: 1050704758
+      IconsPack_127: 1658037670
       IconsPack_59: 2109595573
       IconsPack_193: 1628557719
       IconsPack_138: -1552564898
