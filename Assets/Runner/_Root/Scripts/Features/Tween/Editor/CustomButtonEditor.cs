@@ -21,7 +21,6 @@ namespace Runner.Features.Tween.Editor
             m_OnClickProperty = serializedObject.FindProperty("m_OnClick");
         }
 
-        // Новый способ редактирования представления инскпектора
         public override VisualElement CreateInspectorGUI()
         {
             var root = new VisualElement();
@@ -29,6 +28,8 @@ namespace Runner.Features.Tween.Editor
             var animationType = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.AnimationTypeName));
             var curveEase = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.CurveEaseName));
             var duration = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.DurationName));
+            var vibrato = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.Vibrato));
+            var isIndependentUpdate = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.IsIndependentUpdate));
 
             var tweenLabel = new Label("Settings Tween");
 
@@ -36,13 +37,14 @@ namespace Runner.Features.Tween.Editor
             root.Add(animationType);
             root.Add(curveEase);
             root.Add(duration);
- 
+            root.Add(vibrato);
+            root.Add(isIndependentUpdate);
+
             root.Add(new IMGUIContainer(OnInspectorGUI));
 
             return root;
         }
 
-        // Старый способ представления инскпектора
         public override void OnInspectorGUI()
         {
             serializedObject.Update();          

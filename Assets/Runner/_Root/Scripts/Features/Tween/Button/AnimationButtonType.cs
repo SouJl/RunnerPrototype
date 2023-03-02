@@ -5,5 +5,6 @@
         None,
         ChangeRotation,
         ChangePosition,
+        ChangeScale,
     }
 }

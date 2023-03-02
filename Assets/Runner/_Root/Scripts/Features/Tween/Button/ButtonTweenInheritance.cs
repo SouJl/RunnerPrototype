@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Runner.Features.Tweens
 {
     [RequireComponent(typeof(RectTransform))]
-    public class ButtonTweenInheritance: Button
+    public class ButtonTweenInheritance : Button
     {
 
         [SerializeField] private RectTransform _rectTransform;
@@ -15,10 +15,15 @@ namespace Runner.Features.Tweens
         [SerializeField] private Ease _curveEase = Ease.Linear;
         [SerializeField] private float _duration = 0.6f;
         [SerializeField] private float _strength = 30f;
+        [SerializeField] private int _vibrato = 10;
+        [SerializeField] protected bool _isIndependentUpdate = true;
 
         public static string AnimationTypeName => nameof(_animationButtonType);
         public static string CurveEaseName => nameof(_curveEase);
         public static string DurationName => nameof(_duration);
+
+        public static string Vibrato => nameof(_vibrato);
+        public static string IsIndependentUpdate => nameof(_isIndependentUpdate);
 
         protected override void Awake()
         {
@@ -47,11 +52,20 @@ namespace Runner.Features.Tweens
             switch (_animationButtonType)
             {
                 case AnimationButtonType.ChangeRotation:
-                    _rectTransform.DOShakeRotation(_duration, Vector3.forward * _strength).SetEase(_curveEase);
+                    _rectTransform.DOShakeRotation(_duration, Vector3.forward * _strength, _vibrato)
+                        .SetEase(_curveEase)
+                        .SetUpdate(_isIndependentUpdate);
                     break;
 
                 case AnimationButtonType.ChangePosition:
-                    _rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase);
+                    _rectTransform.DOShakePosition(_duration, Vector2.one * _strength, _vibrato)
+                       .SetEase(_curveEase)
+                       .SetUpdate(_isIndependentUpdate);
+                    break;
+                case AnimationButtonType.ChangeScale:
+                    _rectTransform.DOPunchScale(Vector2.one * _strength, _duration, _vibrato)
+                        .SetEase(_curveEase)
+                        .SetUpdate(_isIndependentUpdate);
                     break;
             }
         }
