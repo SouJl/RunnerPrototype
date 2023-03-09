@@ -1,6 +1,7 @@
 ﻿using Runner.Tool;
 using Runner.Game;
 using Runner.Features.Inventory;
+using Runner.Features.Reward;
 
 namespace Runner.Profile
 {
@@ -10,6 +11,7 @@ namespace Runner.Profile
         public readonly InputType InputType;
         public readonly PlayerModel Player;
         public readonly IInventoryModel Inventory;
+        public readonly ICurrencyModel Currency;
 
         public ProfilePlayer(IProfileData profileData)
         {
@@ -20,6 +22,7 @@ namespace Runner.Profile
             Player = new PlayerModel(profileData.PlayerData);
             
             Inventory = new InventoryModel();
+            Currency = new CurrencyModel();
         }
     }
 }

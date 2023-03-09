@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace Rewards
+namespace Runner.Features.Reward
 {
     internal interface IRewardDataConfig
     {

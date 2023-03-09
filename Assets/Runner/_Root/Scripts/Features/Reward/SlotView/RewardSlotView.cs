@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Rewards
+namespace Runner.Features.Reward
 {
     internal class RewardSlotView : MonoBehaviour
     {

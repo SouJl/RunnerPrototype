@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Rewards
+namespace Runner.Features.Reward
 {
     internal interface IRewardItem
     {

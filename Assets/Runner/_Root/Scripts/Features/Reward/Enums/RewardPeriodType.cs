@@ -1,4 +1,4 @@
-﻿namespace Rewards
+﻿namespace Runner.Features.Reward
 {
     internal enum RewardPeriodType
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Rewards
+namespace Runner.Features.Reward
 {
     internal interface IRewardView
     {

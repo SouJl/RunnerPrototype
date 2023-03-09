@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Rewards
+namespace Runner.Features.Reward
 {
     [Serializable]
     internal class Reward
