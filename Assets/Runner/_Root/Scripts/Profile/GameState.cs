@@ -8,6 +8,7 @@ namespace Runner.Profile
         Start, 
         Settings,
         Storage,
+        DailyReward,
         Game
     }
 }

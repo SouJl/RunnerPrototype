@@ -19,8 +19,6 @@ namespace Runner.Features.Reward
         private readonly ProfilePlayer _profilePlayer;
         private readonly CurrencyController _currencyController;
 
-    //    private readonly ICurrencyView _currencyView;
- 
         private bool _isGetReward;
 
         public RewardController(Transform placeForUi, ProfilePlayer profilePlayer)
@@ -60,6 +58,7 @@ namespace Runner.Features.Reward
         protected override void OnDispose()
         {
             _view.Deinit();
+            _currencyController.Dispose();
             base.OnDispose();
         }
 
@@ -71,7 +70,8 @@ namespace Runner.Features.Reward
                     _config.RewardPeriodType, 
                     RewardsStateUpdater(), 
                     ClaimReward, 
-                    ResetRewardsState
+                    ResetRewardsState,
+                    Exit
                 );
 
             RefreshUi();
@@ -113,6 +113,13 @@ namespace Runner.Features.Reward
             RefreshRewardsState();
         }
 
+        private void ResetRewardsState()
+        {
+            _view.TimeGetReward = null;
+            _view.CurrentSlotInActive = 0;
+        }
+
+        private void Exit() => _profilePlayer.CurrentState.Value = GameState.Start;
 
         private void RefreshRewardsState()
         {
@@ -137,12 +144,6 @@ namespace Runner.Features.Reward
 
             _isGetReward = isTimeToGetNewReward;
 
-        }
-
-        private void ResetRewardsState()
-        {
-            _view.TimeGetReward = null;
-            _view.CurrentSlotInActive = 0;
         }
 
 

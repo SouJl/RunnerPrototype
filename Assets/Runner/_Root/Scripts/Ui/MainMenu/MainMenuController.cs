@@ -20,7 +20,7 @@ namespace Runner.UI
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame, OpenSettings, OpenStorage, Exit, PlayRewardedADS, BuyProduct);
+            _view.Init(StartGame, OpenSettings, OpenStorage, OpenDailyReward, Exit, PlayRewardedADS, BuyProduct);
 
             _rewardedAdsProvider = new RewardedAdsProvider();
             _buyProductProvdier = new BuyProductIAPProvider();
@@ -55,6 +55,11 @@ namespace Runner.UI
         private void OpenStorage() 
         {
             _profilePlayer.CurrentState.Value = GameState.Storage;
+        }
+
+        private void OpenDailyReward()
+        {
+            _profilePlayer.CurrentState.Value = GameState.DailyReward;
         }
 
         private void Exit() 

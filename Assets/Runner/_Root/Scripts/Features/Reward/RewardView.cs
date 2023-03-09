@@ -16,7 +16,7 @@ namespace Runner.Features.Reward
         void Init(IEnumerable<IRewardItem> rewardItems, 
             RewardPeriodType rewardPeriodType, 
             IEnumerator RewardUpdater, 
-            UnityAction claimReward, UnityAction reset);
+            UnityAction claimReward, UnityAction reset, UnityAction exit);
         void Deinit();
         IRewardItem GetActiveReward();
         void UpdateUI(bool isGetReward, string newTimerRewardText);
@@ -34,6 +34,7 @@ namespace Runner.Features.Reward
         [SerializeField] private GameObject _containerSlotRewardPrefab;
         [SerializeField] private Button _claimRewardButton;
         [SerializeField] private Button _resetButton;
+        [SerializeField] private Button _exitButton;
 
         private List<RewardSlotView> _slotViews = new List<RewardSlotView>();
  
@@ -63,14 +64,14 @@ namespace Runner.Features.Reward
             IEnumerable<IRewardItem> rewardItems, 
             RewardPeriodType rewardPeriodType,
             IEnumerator RewardUpdater,
-            UnityAction claimReward, UnityAction reset)
+            UnityAction claimReward, UnityAction reset, UnityAction exit)
         {
             if (rewardItems == null)
                 throw new ArgumentNullException(nameof(rewardItems));
 
             InitSlots(rewardItems, rewardPeriodType);
 
-            SubscribeButtons(claimReward, reset);
+            SubscribeButtons(claimReward, reset, exit);
 
             StartCoroutine(RewardUpdater);
         }
@@ -119,10 +120,11 @@ namespace Runner.Features.Reward
             _slotViews.Clear();
         }
 
-        private void SubscribeButtons(UnityAction claimReward, UnityAction reset)
+        private void SubscribeButtons(UnityAction claimReward, UnityAction reset, UnityAction exit)
         {
             _claimRewardButton.onClick.AddListener(claimReward);
             _resetButton.onClick.AddListener(reset);
+            _exitButton.onClick.AddListener(exit);
         }
 
         private void UnsubscribeButtons()

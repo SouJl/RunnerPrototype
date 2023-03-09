@@ -1,4 +1,5 @@
-﻿using Runner.Features.Storage;
+﻿using Runner.Features.Reward;
+using Runner.Features.Storage;
 using Runner.Game;
 using Runner.Profile;
 using Runner.UI;
@@ -13,6 +14,7 @@ namespace Runner
 
         private MainMenuController _mainMenuController;
         private SettingsMenuContoller _settingsMenuContoller;
+        private RewardController _rewardController; 
         private GameController _gameController;
         private StorageContext _storageContext;
 
@@ -53,6 +55,11 @@ namespace Runner
                         _storageContext = new StorageContext(_placeForUi, _profilePlayer);
                         break;
                     }
+                case GameState.DailyReward:
+                    {
+                        _rewardController = new RewardController(_placeForUi, _profilePlayer);
+                        break;
+                    }
                 case GameState.Game: 
                     {
                         _gameController = new GameController(_placeForUi, _profilePlayer);
@@ -60,7 +67,7 @@ namespace Runner
                     }
                 case GameState.Exit: 
                     {
-                        Application.Quit();
+                        Exit();
                         break;
                     }
             }
@@ -73,7 +80,13 @@ namespace Runner
             _settingsMenuContoller?.Dispose();
             _gameController?.Dispose();
             _storageContext?.Dispose();
+            _rewardController?.Dispose();
         }
 
+
+        private void Exit()
+        {
+            Application.Quit();
+        }
     }
 }
