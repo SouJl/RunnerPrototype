@@ -1,4 +1,4 @@
-﻿using Runner.Features.Tweens;
+﻿using Runner.Tool.Tweens;
 using UnityEditor;
 using UnityEditor.UI;
 using UnityEditor.UIElements;
@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 namespace Runner.Features.Tween.Editor
 {
-    [CustomEditor(typeof(ButtonTweenInheritance))]
+    [CustomEditor(typeof(ButtonTween_Obsolete))]
     public class CustomButtonEditor :ButtonEditor
     {
         private SerializedProperty m_InteractableProperty;
@@ -25,11 +25,11 @@ namespace Runner.Features.Tween.Editor
         {
             var root = new VisualElement();
 
-            var animationType = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.AnimationTypeName));
-            var curveEase = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.CurveEaseName));
-            var duration = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.DurationName));
-            var vibrato = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.Vibrato));
-            var isIndependentUpdate = new PropertyField(serializedObject.FindProperty(ButtonTweenInheritance.IsIndependentUpdate));
+            var animationType = new PropertyField(serializedObject.FindProperty(ButtonTween_Obsolete.AnimationTypeName));
+            var curveEase = new PropertyField(serializedObject.FindProperty(ButtonTween_Obsolete.CurveEaseName));
+            var duration = new PropertyField(serializedObject.FindProperty(ButtonTween_Obsolete.DurationName));
+            var vibrato = new PropertyField(serializedObject.FindProperty(ButtonTween_Obsolete.Vibrato));
+            var isIndependentUpdate = new PropertyField(serializedObject.FindProperty(ButtonTween_Obsolete.IsIndependentUpdate));
 
             var tweenLabel = new Label("Settings Tween");
 

@@ -3,10 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Runner.Features.Tweens
+namespace Runner.Tool.Tweens
 {
+    [System.Obsolete]
     [RequireComponent(typeof(RectTransform))]
-    public class ButtonTweenInheritance : Button
+    public class ButtonTween_Obsolete : Button
     {
 
         [SerializeField] private RectTransform _rectTransform;
