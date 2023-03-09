@@ -4,6 +4,8 @@ using Runner.Profile;
 using Runner.Tool;
 using Runner.Services;
 using UnityEngine;
+using Runner.UI;
+using System;
 
 namespace Runner.Game
 {
@@ -16,6 +18,7 @@ namespace Runner.Game
         private readonly InputController _inputController;
         private readonly AbilitiesContext _abilitiesContextController;
         private readonly TapeBackgroundController _tapeBackgroundController;
+        private readonly GameMenuController _gameMenuController;
 
         public GameController(Transform placeForUi, ProfilePlayer profilePlayer) 
         {
@@ -26,7 +29,8 @@ namespace Runner.Game
             _playerController = CreatePlayerController(profilePlayer);
             _inputController = CreateInputController(profilePlayer, _leftMoveDiff, _rightMoveDiff);
             _abilitiesContextController = CreateAbilitiesContext(placeForUi, _playerController);
-            _tapeBackgroundController = CreateTapeBackground(_leftMoveDiff, _rightMoveDiff); 
+            _tapeBackgroundController = CreateTapeBackground(_leftMoveDiff, _rightMoveDiff);
+            _gameMenuController = CreateGameMenuController(placeForUi, profilePlayer);
 
             ServicesHandler.Analytics.SendGameStarted(profilePlayer.InputType.GetDescription());
         }
@@ -66,7 +70,15 @@ namespace Runner.Game
             AddController(tapeBackgroundController);
 
             return tapeBackgroundController;
-        }      
-     
+        }
+
+        private GameMenuController CreateGameMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
+        {
+            var gameMenuController = new GameMenuController(placeForUi, profilePlayer);
+            AddController(gameMenuController);
+
+            return gameMenuController;
+        }
+
     }
 }
