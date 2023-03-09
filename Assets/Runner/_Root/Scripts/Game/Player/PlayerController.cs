@@ -6,7 +6,7 @@ namespace Runner.Game
 {
     internal class PlayerController : BaseController, IAbilityActivator
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Player");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Player/PlayerView");
         
         private readonly PlayerModel _model;
         private readonly PlayerView _view;

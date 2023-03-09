@@ -16,7 +16,7 @@ namespace Runner.Game
             PlayerModel player, 
             InputType inputType) 
         {
-            _viewPath = new ResourcePath($"Prefabs/{inputType.GetDescription()}");
+            _viewPath = new ResourcePath($"Prefabs/PlayerInput/{inputType.GetDescription()}");
 
             _view = LoadView();
             _view.Init(leftMove, rightMove, player.Speed);

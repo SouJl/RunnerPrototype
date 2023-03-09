@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Runner.UI
 {
-    internal class SettingsMenuView:MonoBehaviour
+    internal class SettingsMenuView : MonoBehaviour
     {
         [SerializeField] private Button _backToMenuButton;
 

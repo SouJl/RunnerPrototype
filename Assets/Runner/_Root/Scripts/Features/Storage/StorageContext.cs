@@ -13,7 +13,7 @@ namespace Runner.Features.Storage
     {
 
         private readonly ResourcePath _dataSourcePath = new("Configs/Upgrades/UpgradeItemsDataConfig");
-        private readonly ResourcePath _viewPath = new("Prefabs/StorageView");
+        private readonly ResourcePath _viewPath = new("Prefabs/Storage/StorageView");
 
         public StorageContext(
             [NotNull] Transform placeForUi, 

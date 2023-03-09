@@ -6,7 +6,7 @@ namespace Runner.UI
 {
     internal class SettingsMenuContoller : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/SettingsMenuUi");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/UI/SettingsMenuUi");
         private ProfilePlayer _profilePlayer;
         private SettingsMenuView _view;
 

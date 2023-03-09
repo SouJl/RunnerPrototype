@@ -11,7 +11,7 @@ namespace Runner.Features.AbilitySystem
     internal class AbilitiesContext : BaseContext<AbilityItemConfig, AbilitiesRepository, AbilitiesView>
     {
         private readonly ResourcePath _dataSourcePath = new("Configs/Ability/AbilityItemsDataConfig");
-        private readonly ResourcePath _viewPath = new("Prefabs/AbilitiesView");
+        private readonly ResourcePath _viewPath = new("Prefabs/Ability/AbilitiesView");
 
         public AbilitiesContext(
             [NotNull] Transform placeForUi,

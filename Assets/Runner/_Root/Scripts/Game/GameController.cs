@@ -15,7 +15,7 @@ namespace Runner.Game
         private readonly PlayerController _playerController;
         private readonly InputController _inputController;
         private readonly AbilitiesContext _abilitiesContextController;
-        private readonly TapeBackGroundgontroller _tapeBackgroundController;
+        private readonly TapeBackgroundController _tapeBackgroundController;
 
         public GameController(Transform placeForUi, ProfilePlayer profilePlayer) 
         {
@@ -60,9 +60,9 @@ namespace Runner.Game
             return abilitiesContextController;
         }
 
-        private TapeBackGroundgontroller CreateTapeBackground(SubscriptionProperty<float> leftMoveDiff, SubscriptionProperty<float> rightMoveDiff)
+        private TapeBackgroundController CreateTapeBackground(SubscriptionProperty<float> leftMoveDiff, SubscriptionProperty<float> rightMoveDiff)
         {
-            var tapeBackgroundController = new TapeBackGroundgontroller(leftMoveDiff, rightMoveDiff);
+            var tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             AddController(tapeBackgroundController);
 
             return tapeBackgroundController;

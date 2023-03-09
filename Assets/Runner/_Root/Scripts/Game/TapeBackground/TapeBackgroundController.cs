@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Runner.Game
 {
-    internal class TapeBackGroundgontroller : BaseController
+    internal class TapeBackgroundController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/TapeBackground");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Background/TapeBackground");
 
         private readonly SubscriptionProperty<float> _diff;
         private readonly ISubscriptionProperty<float> _leftMove;
@@ -14,7 +14,7 @@ namespace Runner.Game
 
         private TapeBackgroundView _view;
 
-        public TapeBackGroundgontroller(
+        public TapeBackgroundController(
             SubscriptionProperty<float> leftMove, 
             SubscriptionProperty<float> rightMove) 
         {

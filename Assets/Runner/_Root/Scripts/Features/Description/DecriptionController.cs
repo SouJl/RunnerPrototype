@@ -14,7 +14,7 @@ namespace Runner.Features.Decription
 
     internal class DecriptionController : BaseController, IDescriptionController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/DescriptionView");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Description/DescriptionView");
 
         private readonly DescriptionView _view;
 

@@ -3,16 +3,16 @@ using UnityEngine;
 using System;
 using Runner.Tool;
 using Runner.Features.Inventory.Items;
-using Object = UnityEngine.Object;
 using Runner.Features.Decription;
 using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
 namespace Runner.Features.Inventory
 {
     internal class InventoryContext : BaseContext<ItemConfig, ItemsRepository, InventoryView>
     {
         private readonly ResourcePath _dataSourcePath = new("Configs/Items/ItemsDataConfig");
-        private readonly ResourcePath _viewPath = new("Prefabs/InventoryView");
+        private readonly ResourcePath _viewPath = new("Prefabs/Items/InventoryView");
 
         public InventoryContext(
             [NotNull] Transform placeForUi, 

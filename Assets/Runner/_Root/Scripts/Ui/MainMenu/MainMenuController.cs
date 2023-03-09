@@ -9,7 +9,7 @@ namespace Runner.UI
 {
     internal class MainMenuController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/MainMenuUi");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/UI/MainMenuUi");
         private readonly ProfilePlayer _profilePlayer;
         private MainMenuView _view;
 
