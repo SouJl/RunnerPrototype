@@ -65,7 +65,11 @@ namespace Runner.UI
         }
 
 
-        private void ToMainMenu() => _profilePlayer.CurrentState.Value = GameState.Start;
+        private void ToMainMenu()
+        {
+            _model.Disable();
+            _profilePlayer.CurrentState.Value = GameState.Start;
+        }
 
         private void Resume() => _model.Disable();
 

@@ -20,9 +20,19 @@ namespace Runner.UI
                 = profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
             _view = LoadView(placeForUi);
             _view.Init(ToMainMenu, OpenPauseMenu);
-
             _pauseMenuModel = new PauseMenuModel();
             CreatePauseMenuController(placeForUi, profilePlayer, _pauseMenuModel);
+
+            if (_pauseMenuModel.IsEnabled) _view.Hide();
+            else _view.Show();
+
+            Subscribe(_pauseMenuModel);
+        }
+
+        protected override void OnDispose()
+        {
+            Unsubscribe(_pauseMenuModel);
+            base.OnDispose();
         }
 
         private IGameMenuView LoadView(Transform placeForUi)
@@ -42,6 +52,22 @@ namespace Runner.UI
 
             return pauseMenuController;
         }
+
+        private void Subscribe(IPauseMenuModel model)
+        {
+            model.Enabled += OnOpenPauseMenu;
+            model.Disabled += OnReturnFromPauseMenu;
+        }
+
+        private void Unsubscribe(IPauseMenuModel model)
+        {
+            model.Enabled -= OnOpenPauseMenu;
+            model.Disabled -= OnReturnFromPauseMenu;
+        }
+
+        private void OnReturnFromPauseMenu() => _view.Show();
+
+        private void OnOpenPauseMenu() => _view.Hide();
 
         private void ToMainMenu() => _profilePlayer.CurrentState.Value = GameState.Start;
 

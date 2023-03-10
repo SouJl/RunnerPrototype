@@ -7,6 +7,8 @@ namespace Runner.UI
     internal interface IGameMenuView
     {
         void Init(UnityAction mainMenuBack, UnityAction openPauseMenu);
+        void Show();
+        void Hide();
     }
 
     internal class GameMenuView :MonoBehaviour, IGameMenuView
@@ -19,6 +21,11 @@ namespace Runner.UI
             _mainMenuBackButton.onClick.AddListener(mainMenuBack);
             _openPauseMenuButton.onClick.AddListener(openPauseMenu);
         }
+
+        public void Show() => gameObject.SetActive(true);
+
+        public void Hide() => gameObject.SetActive(false);
+
         private void OnDestroy()
         {
             _mainMenuBackButton.onClick.RemoveAllListeners();
