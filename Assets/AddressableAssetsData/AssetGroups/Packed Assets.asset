@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
+  - m_GUID: eeb10fb055bb4f74fa1813138966ba64
+    m_Address: Assets/Runner/_Root/Sprites/BackGrounds/Demo.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Background
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ac9d5c24268340d4db3bac32683137e0, type: 2}
   m_SchemaSet:
