@@ -1028,11 +1028,11 @@ MonoBehaviour:
   _spawnAssetButton: {fileID: 1770676809}
   _backgroundImage:
     m_AssetGUID: eeb10fb055bb4f74fa1813138966ba64
-    m_SubObjectName: Demo
+    m_SubObjectName: 
     m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     m_EditorAssetChanged: 0
-  _backgroundImagePlacement: {fileID: 0}
+  _backgroundImagePlacement: {fileID: 921359476}
   _addBackgroundButton: {fileID: 2029741995}
   _removeBackgroundButton: {fileID: 1499607886}
 --- !u!1 &573442290
@@ -1637,7 +1637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
