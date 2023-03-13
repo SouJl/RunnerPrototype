@@ -9,7 +9,8 @@ namespace Runner.Scripts.Tool.Bundles
     internal class LoadWindowView : AssetBundleViewBase
     {
         [Header("Asset Bundles")]
-        [SerializeField] private Button _loadAssetsButton;
+        [SerializeField] private Button _loadSpriteAssetsButton;
+        [SerializeField] private Button _loadAudioAssetsButton;
 
         [Header("Addressables")]
         [SerializeField] private AssetReference _spawningButtonPrefab;
@@ -21,23 +22,30 @@ namespace Runner.Scripts.Tool.Bundles
 
         private void Start()
         {
-            _loadAssetsButton.onClick.AddListener(LoadAssets);
+            _loadSpriteAssetsButton.onClick.AddListener(LoadSpriteAssets);
+            _loadAudioAssetsButton.onClick.AddListener(LoadAudioAssets);
             _spawnAssetButton.onClick.AddListener(SpawnPrefab);
         }
 
         private void OnDestroy()
         {
-            _loadAssetsButton.onClick.RemoveAllListeners();
+            _loadSpriteAssetsButton.onClick.RemoveListener(LoadSpriteAssets);
+            _loadAudioAssetsButton.onClick.RemoveListener(LoadAudioAssets);
             _spawnAssetButton.onClick.RemoveAllListeners();
 
             DespawnPrefabs();
         }
 
-
-        private void LoadAssets()
+        private void LoadSpriteAssets()
         {
-            _loadAssetsButton.interactable = false;
-            StartCoroutine(DownloadAndSetAssetBundles());
+            _loadSpriteAssetsButton.interactable = false;
+            StartCoroutine(DownloadAndSetSpritesAssetBundles());
+        }
+
+        private void LoadAudioAssets()
+        {
+            _loadAudioAssetsButton.interactable = false;
+            StartCoroutine(DownloadAndSetAudioAssetBundles());
         }
 
         private void SpawnPrefab()

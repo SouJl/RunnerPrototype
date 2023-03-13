@@ -41,12 +41,11 @@ namespace Runner.Scripts.Tool.Bundles
             _urlAssetBundleAudio = DownloadSourcePath + audioBundleSpritesId;
         }
 
-
-        protected IEnumerator DownloadAndSetAssetBundles()
+        protected IEnumerator DownloadAndSetSpritesAssetBundles()
         {
             yield return GetSpritesAssetBundle();
             yield return GetMultiplySpiteAssetBundle();
-            yield return GetAudioAssetBundle();
+
 
             if (_spritesAssetBundle != null)
                 SetSpriteAssets(_spritesAssetBundle);
@@ -57,13 +56,18 @@ namespace Runner.Scripts.Tool.Bundles
                 SetMultiplySpriteAssets(_multiplySpritesAssetBundle);
             else
                 Debug.LogError($"AssetBundle {nameof(_multiplySpritesAssetBundle)} failed to load");
+        }
+
+        protected IEnumerator DownloadAndSetAudioAssetBundles()
+        {
+            yield return GetAudioAssetBundle();
+
 
             if (_audioAssetBundle != null)
                 SetAudioAssets(_audioAssetBundle);
             else
                 Debug.LogError($"AssetBundle {nameof(_audioAssetBundle)} failed to load");
         }
-
 
 
         private IEnumerator GetSpritesAssetBundle()
@@ -108,7 +112,7 @@ namespace Runner.Scripts.Tool.Bundles
             if (request.error == null)
             {
                 assetBundle = DownloadHandlerAssetBundle.GetContent(request);
-                Debug.Log("Complete");
+                Debug.Log($"{assetBundle}  - Complete!");
             }
             else
             {
