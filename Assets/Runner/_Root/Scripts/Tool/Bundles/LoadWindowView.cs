@@ -11,6 +11,7 @@ namespace Runner.Scripts.Tool.Bundles
         [Header("Asset Bundles")]
         [SerializeField] private Button _loadSpriteAssetsButton;
         [SerializeField] private Button _loadAudioAssetsButton;
+        [SerializeField] private Button _changeBackgroundButton;
 
         [Header("Addressables")]
         [SerializeField] private AssetReference _spawningButtonPrefab;
@@ -24,6 +25,7 @@ namespace Runner.Scripts.Tool.Bundles
         {
             _loadSpriteAssetsButton.onClick.AddListener(LoadSpriteAssets);
             _loadAudioAssetsButton.onClick.AddListener(LoadAudioAssets);
+            _changeBackgroundButton.onClick.AddListener(LoadAndChangeBackground);
             _spawnAssetButton.onClick.AddListener(SpawnPrefab);
         }
 
@@ -31,6 +33,7 @@ namespace Runner.Scripts.Tool.Bundles
         {
             _loadSpriteAssetsButton.onClick.RemoveListener(LoadSpriteAssets);
             _loadAudioAssetsButton.onClick.RemoveListener(LoadAudioAssets);
+            _changeBackgroundButton.onClick.RemoveListener(LoadAndChangeBackground);
             _spawnAssetButton.onClick.RemoveAllListeners();
 
             DespawnPrefabs();
@@ -46,6 +49,12 @@ namespace Runner.Scripts.Tool.Bundles
         {
             _loadAudioAssetsButton.interactable = false;
             StartCoroutine(DownloadAndSetAudioAssetBundles());
+        }
+
+        private void LoadAndChangeBackground()
+        {
+            _changeBackgroundButton.interactable = false;
+            StartCoroutine(DownloadAndSetBackgroundSpriteBundles());
         }
 
         private void SpawnPrefab()

@@ -13,10 +13,12 @@ namespace Runner.Scripts.Tool.Bundles
         [SerializeField] private string singleBundleSpritesId;
         [SerializeField] private string multiplyBundleSpritesId;
         [SerializeField] private string audioBundleSpritesId;
+        [SerializeField] private string backgroundSpritesId;
 
         [Header("Sprites")]
         [SerializeField] private DataSpriteBundle[] _dataSpriteBundles;
         [SerializeField] private DataMultiplySpriteBundle[] _dataMultiplySpriteBundle;
+        [SerializeField] private DataSpriteBundle[] _dataBackgroundSpritesBundles;
 
         [Space(10)]
         [Header("Audio")]
@@ -26,19 +28,20 @@ namespace Runner.Scripts.Tool.Bundles
         private AssetBundle _spritesAssetBundle;
         private AssetBundle _multiplySpritesAssetBundle;
         private AssetBundle _audioAssetBundle;
-
+        private AssetBundle _backgroundSpriteAssetBundle;
 
 
         private string _urlAssetBundleSprites;
         private string _urlAssetBundleMultiplySprites;
         private string _urlAssetBundleAudio;
-
+        private string _urlAssetBundleBackgroundSprites;
 
         private void Awake()
         {
             _urlAssetBundleSprites = DownloadSourcePath + singleBundleSpritesId;
             _urlAssetBundleMultiplySprites = DownloadSourcePath + multiplyBundleSpritesId;
             _urlAssetBundleAudio = DownloadSourcePath + audioBundleSpritesId;
+            _urlAssetBundleBackgroundSprites = DownloadSourcePath + backgroundSpritesId;
         }
 
         protected IEnumerator DownloadAndSetSpritesAssetBundles()
@@ -69,6 +72,16 @@ namespace Runner.Scripts.Tool.Bundles
                 Debug.LogError($"AssetBundle {nameof(_audioAssetBundle)} failed to load");
         }
 
+        protected IEnumerator DownloadAndSetBackgroundSpriteBundles()
+        {
+            yield return GetBackgroundBundle();
+
+            if (_backgroundSpriteAssetBundle != null)
+                SetBackgroundSpiteAssets(_backgroundSpriteAssetBundle);
+            else
+                Debug.LogError($"AssetBundle {nameof(_backgroundSpriteAssetBundle)} failed to load");
+        }
+
 
         private IEnumerator GetSpritesAssetBundle()
         {
@@ -93,6 +106,18 @@ namespace Runner.Scripts.Tool.Bundles
                 yield return null;
 
             StateRequest(request, out _multiplySpritesAssetBundle);
+        }
+
+        private IEnumerator GetBackgroundBundle()
+        {
+            UnityWebRequest request = UnityWebRequestAssetBundle.GetAssetBundle(_urlAssetBundleBackgroundSprites);
+
+            yield return request.SendWebRequest();
+
+            while (!request.isDone)
+                yield return null;
+
+            StateRequest(request, out _backgroundSpriteAssetBundle);
         }
 
         private IEnumerator GetAudioAssetBundle()
@@ -146,6 +171,12 @@ namespace Runner.Scripts.Tool.Bundles
                 data.AudioSource.clip = assetBundle.LoadAsset<AudioClip>(data.NameAssetBundle);
                 data.AudioSource.Play();
             }
+        }
+
+        private void SetBackgroundSpiteAssets(AssetBundle assetBundle)
+        {
+            foreach (DataSpriteBundle data in _dataBackgroundSpritesBundles)
+                data.Image.sprite = assetBundle.LoadAsset<Sprite>(data.NameAssetBundle);
         }
     }
 }
