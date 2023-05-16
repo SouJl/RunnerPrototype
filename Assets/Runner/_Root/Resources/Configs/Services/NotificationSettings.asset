@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31219c20e1e94244fb1701b524aec283, type: 3}
+  m_Name: NotificationSettings
+  m_EditorClassIdentifier: 
+  <Channels>k__BackingField: []
+  <Notifications>k__BackingField:
+  - <Id>k__BackingField: test_notification
+    <Title>k__BackingField: OnEditor Notification
+    <Text>k__BackingField: Notification was send once in editor playmode
+    <RepeatType>k__BackingField: 0
+    <FireTime>k__BackingField:
+      <Year>k__BackingField: 2023
+      <Month>k__BackingField: 5
+      <Day>k__BackingField: 16
+      <Hour>k__BackingField: 12
+      <Minute>k__BackingField: 20
+    <RepeatInterval>k__BackingField:
+      <Seconds>k__BackingField: 0

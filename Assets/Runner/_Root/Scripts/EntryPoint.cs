@@ -24,6 +24,8 @@ namespace Runner
 
             if (ServicesHandler.AdsService.IsInitialized) OnAdsInitialized();
             else ServicesHandler.AdsService.Initialized.AddListener(OnAdsInitialized);
+
+            ServicesHandler.PushNotification.CreateNotification();
         }
 
         private void OnDestroy()
