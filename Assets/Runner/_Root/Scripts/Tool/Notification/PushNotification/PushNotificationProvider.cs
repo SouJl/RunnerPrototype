@@ -1,4 +1,5 @@
 ﻿using Runner.Tool.Notification.Push.Settings;
+using System.Linq;
 using UnityEngine;
 
 namespace Runner.Tool.Notification.Push
@@ -6,6 +7,8 @@ namespace Runner.Tool.Notification.Push
     internal interface IPushNotification 
     {
         void CreateNotification();
+
+        void CreateNotificationById(string notificationId);
     }
 
     internal class PushNotificationProvider : MonoBehaviour, IPushNotification
@@ -34,6 +37,13 @@ namespace Runner.Tool.Notification.Push
 
             foreach (NotificationData notificationData in _settings.Notifications)
                 _scheduler.ScheduleNotification(notificationData);
+        }
+
+
+        public void CreateNotificationById(string notificationId) 
+        {
+            var notification = _settings.Notifications.Where(n => n.Id == notificationId).FirstOrDefault();
+            _scheduler.ScheduleNotification(notification);
         }
 
     }

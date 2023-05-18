@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: InitialProfileData
   m_EditorClassIdentifier: 
   <GameState>k__BackingField: 2
-  <InputType>k__BackingField: 0
+  <InputType>k__BackingField: 1
   <PlayerData>k__BackingField: {fileID: 11400000, guid: 986e71ac858e55448b98997e87d104d7, type: 2}

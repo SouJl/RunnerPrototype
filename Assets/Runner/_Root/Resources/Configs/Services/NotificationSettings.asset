@@ -12,17 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31219c20e1e94244fb1701b524aec283, type: 3}
   m_Name: NotificationSettings
   m_EditorClassIdentifier: 
-  <Channels>k__BackingField: []
+  <Channels>k__BackingField:
+  - <Id>k__BackingField: gameStarted_id
+    <Name>k__BackingField: Main Channel
+    <Description>k__BackingField: Main channel notification
+    _importance: 3
+  - <Id>k__BackingField: gameEnd_id
+    <Name>k__BackingField: Main Channel
+    <Description>k__BackingField: Main channel notification
+    _importance: 3
   <Notifications>k__BackingField:
-  - <Id>k__BackingField: test_notification
-    <Title>k__BackingField: OnEditor Notification
-    <Text>k__BackingField: Notification was send once in editor playmode
+  - <Id>k__BackingField: gameStarted_id
+    <Title>k__BackingField: Game Started!
+    <Text>k__BackingField: You start the game!
     <RepeatType>k__BackingField: 0
     <FireTime>k__BackingField:
       <Year>k__BackingField: 2023
       <Month>k__BackingField: 5
-      <Day>k__BackingField: 16
-      <Hour>k__BackingField: 12
-      <Minute>k__BackingField: 20
+      <Day>k__BackingField: 17
+      <Hour>k__BackingField: 0
+      <Minute>k__BackingField: 0
+    <RepeatInterval>k__BackingField:
+      <Seconds>k__BackingField: 0
+  - <Id>k__BackingField: gameEnd_id
+    <Title>k__BackingField: You Close the Game
+    <Text>k__BackingField: Come Back Again Later!
+    <RepeatType>k__BackingField: 0
+    <FireTime>k__BackingField:
+      <Year>k__BackingField: 2023
+      <Month>k__BackingField: 5
+      <Day>k__BackingField: 17
+      <Hour>k__BackingField: 0
+      <Minute>k__BackingField: 0
     <RepeatInterval>k__BackingField:
       <Seconds>k__BackingField: 0

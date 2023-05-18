@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &173814488515931557
 RectTransform:
   m_ObjectHideFlags: 0
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d962276e0f8a42ba5876d89ba7a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeText: {fileID: 5472543292721131817}
+  _localizedText: {fileID: 0}
   _tableName: MainMenu_UI
   _localizationTag: settingsBtn_text
 --- !u!1 &3471632871542449583
@@ -1078,7 +1078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8425668317008356094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d962276e0f8a42ba5876d89ba7a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeText: {fileID: 3906012420512873610}
+  _localizedText: {fileID: 0}
   _tableName: MainMenu_UI
   _localizationTag: startBtn_text
 --- !u!1 &6569907101213674370
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d962276e0f8a42ba5876d89ba7a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeText: {fileID: 8049301598729756691}
+  _localizedText: {fileID: 0}
   _tableName: MainMenu_UI
   _localizationTag: storageBtn_text
 --- !u!1 &7675352570070723425
@@ -2163,7 +2163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d962276e0f8a42ba5876d89ba7a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeText: {fileID: 5258182842313745581}
+  _localizedText: {fileID: 0}
   _tableName: MainMenu_UI
   _localizationTag: exitBtn_text
 --- !u!1 &8149847837670880952
@@ -2449,6 +2449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d962276e0f8a42ba5876d89ba7a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeText: {fileID: 4931548966936168061}
+  _localizedText: {fileID: 0}
   _tableName: MainMenu_UI
   _localizationTag: dailyrewardBtn_text
