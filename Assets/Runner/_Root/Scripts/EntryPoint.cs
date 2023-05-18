@@ -26,6 +26,8 @@ namespace Runner
             else ServicesHandler.AdsService.Initialized.AddListener(OnAdsInitialized);
 
             ServicesHandler.PushNotification.CreateNotification();
+
+//            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
         }
 
         private void OnDestroy()

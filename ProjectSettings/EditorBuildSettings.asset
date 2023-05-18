@@ -10,3 +10,4 @@ EditorBuildSettings:
     guid: 71f47fa81f783cc429bcbb855efddee7
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 9a568e71c6e4de84e8ddaf8695223def, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 330804b869604274bbf6c8b76898b9fe, type: 2}
