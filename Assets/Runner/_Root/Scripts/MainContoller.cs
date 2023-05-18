@@ -2,6 +2,7 @@
 using Runner.Features.Storage;
 using Runner.Game;
 using Runner.Profile;
+using Runner.Services;
 using Runner.UI;
 using UnityEngine;
 
@@ -86,6 +87,7 @@ namespace Runner
 
         private void Exit()
         {
+            ServicesHandler.PushNotification.CreateNotificationById("gameEnd_id");
             Application.Quit();
         }
     }

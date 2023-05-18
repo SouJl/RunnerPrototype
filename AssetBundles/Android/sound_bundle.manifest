@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 2617197220
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8597f341c762154b4e3dff6330998aee
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Runner/_Root/AudioClips/512918__lindseysewell__cyberpunk-atmosphere.wav
+- Assets/Runner/_Root/AudioClips/536108__eminyildirim__ui-click.wav
+Dependencies: []

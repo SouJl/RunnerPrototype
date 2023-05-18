@@ -19,17 +19,20 @@ namespace Runner
             var profilePlayer = new ProfilePlayer(_initialData);
             _mainContoller = new MainContoller(_placeForUi, profilePlayer);
 
-            _interstitialProvider = new InterstitialAdsProvider();
+          /*  _interstitialProvider = new InterstitialAdsProvider();
             _interstitialProvider.Subscribe();
 
             if (ServicesHandler.AdsService.IsInitialized) OnAdsInitialized();
-            else ServicesHandler.AdsService.Initialized.AddListener(OnAdsInitialized);
+            else ServicesHandler.AdsService.Initialized.AddListener(OnAdsInitialized);*/
+
+            ServicesHandler.PushNotification.CreateNotificationById("gameStarted_id");
+
         }
 
         private void OnDestroy()
         {
-            ServicesHandler.AdsService.Initialized.RemoveListener(OnAdsInitialized);
-            _interstitialProvider.Unsubscribe();
+            /*ServicesHandler.AdsService.Initialized.RemoveListener(OnAdsInitialized);
+            _interstitialProvider.Unsubscribe();*/
             _mainContoller.Dispose();
         }
 

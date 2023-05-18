@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2250776520
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: ui_singlesprite_bundle
+      Dependencies: {}
+    Info_1:
+      Name: ui_multiplyspite_bundle
+      Dependencies: {}
+    Info_2:
+      Name: sound_bundle
+      Dependencies: {}
+    Info_3:
+      Name: ui_backgroundsprite_bundle
+      Dependencies: {}
